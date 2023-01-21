@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">cabpage</string>
-    <string name="appdes">CHALO HUMARAY SATH!</string>
+    <string name="appdes">Let\'s go with Cabify!</string>
     <string name="mainlogin">LOGIN</string>
     <string name="mainsignup">SIGNUP</string>
     <string name="logindes">HELLO CUSTOMER!</string>'
@@ -10,6 +10,9 @@
     <string name="signem">Enter your email</string>
     <string name="signpwd">Enter your password</string>
     <string name="check">Keep me logged in</string>
+    <string name="facebook_app_id">1234</string>
+    <string name="fb_login_protocol_scheme">fb1234</string>
+    <string name="facebook_client_token">56789</string>
     <string name="signdes">SIGN UP AND BOOK YOUR FIRST RIDE WITH US</string>
     <string name="signuser">Username</string>
     <string name="cnfpwd">Confirm password</string>
@@ -20,7 +23,6 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
-
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>

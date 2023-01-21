@@ -19,17 +19,18 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="323dp"
-        android:layout_height="56dp"
-        android:text="LET'S GO WITH CABIFY!"
+        android:layout_width="288dp"
+        android:layout_height="45dp"
+        android:gravity="center_horizontal"
+        android:text="@string/appdes"
         android:textColor="#f9f073"
-        android:textSize="26sp"
+        android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.818"
+        app:layout_constraintHorizontal_bias="0.569"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.466" />
+        app:layout_constraintVertical_bias="0.459" />
 
     <Button
         android:id="@+id/login"

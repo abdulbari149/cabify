@@ -50,11 +50,5 @@ public class Options extends AppCompatActivity  {
                 popup.show();
             }
         });
-
-
-
-
-
-
     }
 }

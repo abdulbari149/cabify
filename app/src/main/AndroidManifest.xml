@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
-<uses-permission android:name="android.permission.INTERNET">
-
-</uses-permission>
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.cabify">
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -15,7 +13,7 @@
         android:theme="@style/Theme.AppCompat.NoActionBar"
         tools:targetApi="31">
         <activity
-            android:name=".Options"
+            android:name="com.example.cabify.Options"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -37,21 +35,21 @@
             android:value="YOUR_API_KEY" />
 
         <activity
-            android:name=".signupactivity"
+            android:name="com.example.cabify.SignUpActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".LoginActivity"
+            android:name="com.example.cabify.LoginActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.cabify.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -63,8 +61,11 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
         <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
         <meta-data android:name="com.facebook.sdk.ClientToken" android:value="@string/facebook_client_token"/>
     </application>
+
+    <uses-permission android:name="android.permission.INTERNET"/>
 
 </manifest>

@@ -1,4 +1,4 @@
-package com.example.cabpage;
+package com.example.cabify;
 
 import android.content.Context;
 

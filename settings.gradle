@@ -12,5 +12,5 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "cabpage"
+rootProject.name = "cabify"
 include ':app'

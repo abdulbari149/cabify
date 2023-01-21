@@ -6,123 +6,132 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:backgroundTint="#130C0C"
-    tools:context=".LoginActivity">
+    tools:context="com.example.cabify.LoginActivity">
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="395dp"
-        android:layout_height="243dp"
+        android:layout_width="320dp"
+        android:layout_height="206dp"
+        android:contentDescription="TODO"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.053"
-        app:srcCompat="@drawable/caba" />
+        app:layout_constraintVertical_bias="0.03"
+        app:srcCompat="@drawable/login_screen_image" />
 
     <TextView
-        android:id="@+id/logtext"
+        android:id="@+id/loginTitle"
         android:layout_width="231dp"
-        android:layout_height="60dp"
-        android:text="@string/logindes"
+        android:layout_height="33dp"
+        android:text="@string/login_title"
         android:textColor="#f9f073"
         android:textSize="26sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.439" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.033" />
 
     <EditText
-        android:id="@+id/logemail"
-        android:layout_width="296dp"
-        android:layout_height="49dp"
-        android:ems="10"
-        android:hint="@string/logem"
-        android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.33"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.552" />
-
-    <EditText
-        android:id="@+id/logpassword"
-        android:layout_width="296dp"
-        android:layout_height="49dp"
+        android:id="@+id/loginPassword"
+        android:layout_width="350dp"
+        android:layout_height="48dp"
+        android:autofillHints=""
         android:ems="10"
         android:hint="@string/logpwd"
         android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.33"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.659" />
+        app:layout_constraintVertical_bias="0.534" />
+
 
     <Button
-        android:id="@+id/loginbtn"
-        android:layout_width="128dp"
-        android:layout_height="65dp"
+        android:id="@+id/loginBtn"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
         android:backgroundTint="#eaad1a"
         android:text="@string/mainlogin"
         android:textColor="#0B0A0A"
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.872" />
+        app:layout_constraintVertical_bias="0.715" />
 
     <CheckBox
         android:id="@+id/checkBox"
         android:layout_width="307dp"
-        android:layout_height="41dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="256dp"
         android:hint="@string/check"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.365"
+        app:layout_constraintHorizontal_bias="0.298"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.752" />
+        app:layout_constraintTop_toBottomOf="@+id/loginPassword"
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageButton
         android:id="@+id/button4"
         android:layout_width="58dp"
-        android:layout_height="45dp"
+        android:layout_height="48dp"
         android:backgroundTint="#F4F1F1"
+        android:contentDescription="@string/google_btn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/backbtn" />
+        app:layout_constraintVertical_bias="0.037"
+        app:srcCompat="@drawable/backbtn"
+        tools:ignore="RedundantDescriptionCheck" />
 
+    <EditText
+        android:id="@+id/loginEmail"
+        android:layout_width="350dp"
+        android:layout_height="48dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/logem"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toTopOf="@+id/loginPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginTitle" />
 
     <ImageView
         android:id="@+id/googlebtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:contentDescription="TODO"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.586"
+        app:layout_constraintHorizontal_bias="0.625"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.948"
+        app:layout_constraintVertical_bias="0.838"
         app:srcCompat="@drawable/gg" />
 
     <ImageView
         android:id="@+id/fb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:contentDescription="TODO"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.435"
+        app:layout_constraintHorizontal_bias="0.355"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.948"
+        app:layout_constraintVertical_bias="0.838"
         app:srcCompat="@drawable/fbn" />
 
 

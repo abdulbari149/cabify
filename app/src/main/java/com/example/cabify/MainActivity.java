@@ -1,4 +1,4 @@
-package com.example.cabpage;
+package com.example.cabify;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
 
 public class MainActivity extends AppCompatActivity {
     Button log;
@@ -21,16 +22,15 @@ public class MainActivity extends AppCompatActivity {
         log.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentlog=new Intent(MainActivity.this,LoginActivity.class);
-                startActivity(intentlog);
+                Intent intentLogin = new Intent(MainActivity.this,LoginActivity.class);
+                startActivity(intentLogin);
             }
         });
         sign.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentsign=new Intent(MainActivity.this,signupactivity.class);
-//
-                startActivity(intentsign);
+                Intent intentSignup =new Intent(MainActivity.this, SignUpActivity.class);
+                startActivity(intentSignup);
             }
         });
     }

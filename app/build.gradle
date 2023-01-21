@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.cabpage'
+    namespace 'com.example.cabify'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.cabpage"
+        applicationId "com.example.cabify"
         minSdk 22
         targetSdk 33
         versionCode 1
@@ -51,8 +51,8 @@ dependencies {
     implementation 'com.facebook.android:facebook-login:latest.release'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
     implementation 'com.facebook.android:facebook-android-sdk:latest.release'
-    implementation platform('com.google.firebase:firebase-bom:31.2.0'
-    )
+    implementation platform('com.google.firebase:firebase-bom:31.2.0')
+    implementation 'com.facebook.android:facebook-android-sdk:latest.release'
 
     // Add the dependency for the Firebase Authentication library
     // When using the BoM, you don't specify versions in Firebase library dependencies

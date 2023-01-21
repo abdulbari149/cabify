@@ -1,18 +1,18 @@
 <resources>
-    <string name="app_name">cabpage</string>
+    <string name="app_name">Cabify</string>
     <string name="appdes">Let\'s go with Cabify!</string>
     <string name="mainlogin">LOGIN</string>
     <string name="mainsignup">SIGNUP</string>
-    <string name="logindes">HELLO CUSTOMER!</string>'
+    <string name="login_title">HELLO CUSTOMER!</string>'
     <string name="credentials">Enter your credentials below</string>
     <string name="logem">Enter your email</string>
     <string name="logpwd">Enter your password</string>
     <string name="signem">Enter your email</string>
     <string name="signpwd">Enter your password</string>
     <string name="check">Keep me logged in</string>
-    <string name="facebook_app_id">720315182820931</string>
+    <string name="facebook_app_id">688132566370750</string>
     <string name="fb_login_protocol_scheme">fb1234</string>
-    <string name="facebook_client_token">06de599968d53e0b47a918e6a1b72599</string>
+    <string name="facebook_client_token">adb719f1f7e7d8364fc1b8879cb741c6</string>
     <string name="signdes">SIGN UP AND BOOK YOUR FIRST RIDE WITH US</string>
     <string name="signuser">Username</string>
     <string name="cnfpwd">Confirm password</string>
@@ -29,4 +29,8 @@
     <string name="app">Navigation Drawer</string>
     <string name="open">Open Nav</string>
     <string name="close">Close Nav</string>
+    <string name="google_btn">Google button</string>
+    <string name="facebook_btn">Google button</string>
+    <string name="backbtn">back button</string>
+    <string name="continue_with_google">Continue With Google</string>
 </resources>

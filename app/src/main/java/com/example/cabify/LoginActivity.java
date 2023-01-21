@@ -1,6 +1,7 @@
-package com.example.cabpage;
+package com.example.cabify;
 
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.facebook.AccessToken;
@@ -16,12 +17,10 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
-import com.facebook.FacebookSdk;
-import com.facebook.appevents.AppEventsLogger;
 
 
 import com.facebook.CallbackManager;
@@ -37,12 +36,16 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.FirebaseDatabase;
+
+import com.facebook.FacebookSdk;
+import com.facebook.appevents.AppEventsLogger;
+
+
 import java.util.Arrays;
 
 
 public class LoginActivity extends AppCompatActivity {
-    ImageView facebook;
+    ImageView facebookBtn;
     ImageButton btn;
     Button lgn;
     private FirebaseAuth.AuthStateListener authStateListener;
@@ -64,14 +67,14 @@ public class LoginActivity extends AppCompatActivity {
 
         btn = findViewById(R.id.button4);
 
-        lgn = findViewById(R.id.loginbtn);
-        emaillgn = findViewById(R.id.logemail);
+        lgn = findViewById(R.id.loginBtn);
+        emaillgn = findViewById(R.id.loginEmail);
         logo = findViewById(R.id.imageView2);
-        passlgn = findViewById(R.id.logpassword);
+        passlgn = findViewById(R.id.loginPassword);
         google = findViewById(R.id.googlebtn);
         auth = FirebaseAuth.getInstance();
         callbackManager = CallbackManager.Factory.create();
-        facebook = findViewById(R.id.fb);
+        facebookBtn = findViewById(R.id.fb);
         googleSignInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
         googleSignInClient = GoogleSignIn.getClient(this, googleSignInOptions);
 
@@ -81,7 +84,8 @@ public class LoginActivity extends AppCompatActivity {
                 onBackPressed();
             }
         });
-        facebook.setOnClickListener(new View.OnClickListener() {
+
+        facebookBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 LoginManager.getInstance().logInWithReadPermissions(LoginActivity.this, Arrays.asList("public_profile"));

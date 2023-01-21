@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">cabpage</string>
+    <string name="appdes">CHALO HUMARAY SATH!</string>
+    <string name="mainlogin">LOGIN</string>
+    <string name="mainsignup">SIGNUP</string>
+    <string name="logindes">HELLO CUSTOMER!</string>'
+    <string name="credentials">Enter your credentials below</string>
+    <string name="logem">Enter your email</string>
+    <string name="logpwd">Enter your password</string>
+    <string name="signem">Enter your email</string>
+    <string name="signpwd">Enter your password</string>
+    <string name="check">Keep me logged in</string>
+    <string name="signdes">SIGN UP AND BOOK YOUR FIRST RIDE WITH US</string>
+    <string name="signuser">Username</string>
+    <string name="cnfpwd">Confirm password</string>
+    <string name="title_activity_mapscreen">mapscreen</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="app">Navigation Drawer</string>
+    <string name="open">Open Nav</string>
+    <string name="close">Close Nav</string>
+</resources>

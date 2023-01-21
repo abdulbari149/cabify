@@ -8,17 +8,18 @@
     android:backgroundTint="#46dbc8"
     tools:context=".signupactivity">
 
+
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="411dp"
         android:layout_height="260dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="0.008"
         app:srcCompat="@drawable/cabl" />
-
 
     <TextView
         android:id="@+id/textView2"
@@ -40,11 +41,11 @@
         android:id="@+id/email"
         android:layout_width="262dp"
         android:layout_height="48dp"
+
         android:ems="10"
         android:hint="@string/logem"
         android:inputType="textEmailAddress"
         android:textColor="#0B0909"
-
         android:textColorHint="#121010"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -139,4 +140,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.8" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

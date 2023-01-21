@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="#130C0C"
     android:background="@color/white"
+    android:backgroundTint="#130C0C"
     tools:context=".Options">
 
     <TextView
@@ -18,9 +18,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.039" />
+        app:layout_constraintVertical_bias="0.007" />
 
     <TextView
         android:id="@+id/textView2"
@@ -40,12 +41,13 @@
     <ImageButton
         android:id="@+id/imageButton3"
         android:layout_width="380dp"
-        android:layout_height="130dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="465dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/display"
         app:layout_constraintVertical_bias="0.041"
         app:srcCompat="@drawable/carpre" />
 
@@ -145,15 +147,39 @@
 
     <ImageView
         android:id="@+id/imageView5"
-        android:layout_width="29dp"
+        android:layout_width="0dp"
         android:layout_height="36dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginEnd="6dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/logoutbtn"
         app:layout_constraintHorizontal_bias="0.018"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.007"
         app:srcCompat="@drawable/ic_baseline_dehaze_24" />
+
+    <Button
+        android:id="@+id/logoutbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="216dp"
+        android:text="Logout"
+        app:layout_constraintEnd_toStartOf="@+id/display"
+        app:layout_constraintStart_toEndOf="@+id/imageView5"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/display"
+        android:layout_width="36dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/com_facebook_profile_picture_blank_square" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

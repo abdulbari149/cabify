@@ -10,13 +10,21 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.login.LoginManager;
+import com.facebook.login.LoginResult;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+
+import java.util.Arrays;
 
 public class signupactivity extends AppCompatActivity {
     ImageButton btn;
@@ -25,7 +33,9 @@ public class signupactivity extends AppCompatActivity {
     EditText pass;
     EditText cnf;
     Button sign;
+    ImageView facebook;
     private FirebaseAuth auth;
+    CallbackManager callbackManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +48,8 @@ public class signupactivity extends AppCompatActivity {
         cnf=findViewById(R.id.cnfpassword);
         sign=findViewById(R.id.signupbtn);
         auth=FirebaseAuth.getInstance();
-
+        callbackManager=CallbackManager.Factory.create();
+        facebook=findViewById(R.id.fb);
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,6 +89,8 @@ public class signupactivity extends AppCompatActivity {
 
     }
 
+
+
     private void registerUser(String email1, String password1) {
         auth.createUserWithEmailAndPassword(email1, password1).addOnCompleteListener(signupactivity.this, new OnCompleteListener<AuthResult>() {
             @Override
@@ -93,4 +106,5 @@ public class signupactivity extends AppCompatActivity {
         });
 
     }
+
 }

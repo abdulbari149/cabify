@@ -25,14 +25,14 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         btn=findViewById(R.id.button4);
-        lgn=findViewById(R.id.loginbtn);
+        login=findViewById(R.id.loginbtn);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 onBackPressed();
             }
         });
-        lgn.setOnClickListener(new View.OnClickListener() {
+        login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(LoginActivity.this, "Hello", Toast.LENGTH_SHORT).show();

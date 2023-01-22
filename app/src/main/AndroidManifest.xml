@@ -57,13 +57,6 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity
-            android:name=".Options"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 
@@ -78,6 +71,7 @@
         <meta-data
             android:name="com.google.android.gms:play-services-maps:version"
             android:value="com.google.android.gms:play-services-maps:18.1.0" />
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/API_KEY" />
@@ -93,6 +87,15 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
+        <activity
+            android:name=".LocationActivity"
+            android:exported="false" >
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
         <activity
             android:name=".SignUpActivity"
             android:exported="false" >
@@ -101,7 +104,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name="com.example.cabify.LoginActivity"
+            android:name=".LoginActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -129,6 +132,5 @@
             android:value="@string/facebook_client_token" />
     </application>
 
-    <uses-permission android:name="android.permission.INTERNET"/>
 
 </manifest>

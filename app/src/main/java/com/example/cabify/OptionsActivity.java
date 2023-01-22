@@ -7,24 +7,73 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
+import android.widget.Toast;
+
+import com.facebook.AccessToken;
+import com.facebook.GraphRequest;
+import com.facebook.GraphResponse;
+import com.facebook.login.LoginManager;
+import com.squareup.picasso.Picasso;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class OptionsActivity extends AppCompatActivity  {
+    ImageButton carbutton;
+    ImageButton carprebutton;
+    ImageButton autobutton;
+    ImageButton bikebutton;
     PopupMenu popup_menu;
     View view;
 
+
     Button logout;
     ImageView dp;
-
-
-    private final View.OnClickListener carImageHandler = v -> startActivity(new Intent(OptionsActivity.this, LocationActivity.class));
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_options);
         ImageView menuButton = findViewById(R.id.menu_button);
+        carbutton = findViewById(R.id.carbtn);
+        carprebutton = findViewById(R.id.imageButton4);
+        autobutton = findViewById(R.id.imageButton6);
+        bikebutton = findViewById(R.id.imageButton7);
+
+
+
+        carbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent car_select = new Intent(OptionsActivity.this,Car.class);
+                startActivity(car_select);
+            }
+        });
+        carprebutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent car_pre_select = new Intent(OptionsActivity.this,CarPre.class);
+                startActivity(car_pre_select);
+            }
+        });
+        autobutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent auto_select = new Intent(OptionsActivity.this,Auto.class);
+                startActivity(auto_select);
+            }
+        });
+        bikebutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent bike_select = new Intent(OptionsActivity.this,Bike.class);
+                startActivity(bike_select);
+            }
+        });
+
         menuButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -37,7 +86,8 @@ public class OptionsActivity extends AppCompatActivity  {
                                 // Do something for menu item 1
                                 return true;
                             case R.id.menu_item_2:
-                                // Do something for menu item 2
+                                Intent logout = new Intent(OptionsActivity.this,LoginActivity.class);
+                                startActivity(logout);
                                 return true;
                             default:
                                 return false;
@@ -47,9 +97,6 @@ public class OptionsActivity extends AppCompatActivity  {
                 popup.show();
             }
         });
-
-        findViewById(R.id.carImageButton).setOnClickListener(carImageHandler);
-
 //        AccessToken accessToken=AccessToken.getCurrentAccessToken();
 //        logout=findViewById(R.id.logoutbtn);
 //        dp=findViewById(R.id.display);

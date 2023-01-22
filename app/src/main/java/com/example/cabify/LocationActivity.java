@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -28,7 +29,7 @@ import com.google.android.libraries.places.widget.listener.PlaceSelectionListene
 import java.util.Arrays;
 import java.util.Collections;
 import android.widget.EditText;
-public class LocationActivity extends AppCompatActivity {
+public class LocationActivity extends AppCompatActivity implements OnMapReadyCallback {
     // Set up a PlaceSelectionListener to handle the response.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +38,6 @@ public class LocationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_location);
         Places.initialize(this, "AIzaSyCO4ubh_IBZn-XyaDMYimbaQaN6v1MVNio");
         // Retrieve a PlacesClient (previously initialized - see MainActivity)
-        PlacesClient placesClient = Places.createClient(this);
 
 
         AutocompleteSupportFragment autocompleteFragment = (AutocompleteSupportFragment)

@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -28,14 +29,14 @@ import com.google.android.libraries.places.widget.listener.PlaceSelectionListene
 import java.util.Arrays;
 import java.util.Collections;
 import android.widget.EditText;
-public class LocationActivity extends AppCompatActivity {
+public class LocationActivity extends AppCompatActivity implements OnMapReadyCallback {
     // Set up a PlaceSelectionListener to handle the response.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_location);
-        Places.initialize(this, "AIzaSyCO4ubh_IBZn-XyaDMYimbaQaN6v1MVNio");
+        Places.initialize(getApplicationContext(), "AIzaSyCO4ubh_IBZn-XyaDMYimbaQaN6v1MVNio");
         // Retrieve a PlacesClient (previously initialized - see MainActivity)
         PlacesClient placesClient = Places.createClient(this);
 
@@ -54,10 +55,10 @@ public class LocationActivity extends AppCompatActivity {
 
             @Override
             public void onError(@NonNull Status status) {
-            // TODO: Handle the error.
-            Log.i(TAG, "An error occurred: " + status);
-        }
-    });
+                // TODO: Handle the error.
+                Log.i(TAG, "An error occurred: " + status);
+            }
+        });
 
         // Create a new token for the autocomplete session. Pass this to FindAutocompletePredictionsRequest,
         // and once again when the user makes a selection (for example when calling fetchPlace()).
@@ -71,12 +72,12 @@ public class LocationActivity extends AppCompatActivity {
                 // Call either setLocationBias() OR setLocationRestriction().
                 .setLocationBias(bounds)
                 //.setLocationRestriction(bounds)
-                .setOrigin(new LatLng(-33.8749937,151.2041382))
+                .setOrigin(new LatLng(-33.8749937, 151.2041382))
                 .setCountries("AU", "NZ")
                 .setTypesFilter(Collections.singletonList(TypeFilter.ADDRESS.toString()))
                 .setSessionToken(token)
                 .build();
-        PlacesClient placesClient = Places.createClient(this);
+        placesClient = Places.createClient(this);
         placesClient.findAutocompletePredictions(request).addOnSuccessListener((response) -> {
             for (AutocompletePrediction prediction : response.getAutocompletePredictions()) {
                 Log.i(TAG, prediction.getPlaceId());
@@ -89,13 +90,13 @@ public class LocationActivity extends AppCompatActivity {
             }
         });
 
-
-
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.mapView);
         if (mapFragment != null) {
             mapFragment.getMapAsync(this);
         }
+
+
     }
 
     @Override
@@ -104,6 +105,4 @@ public class LocationActivity extends AppCompatActivity {
                 .position(new LatLng(0, 0))
                 .title("Marker"));
     }
-
-
 }

@@ -14,14 +14,13 @@
         android:layout_height="wrap_content"
         android:text="CABIFY"
         android:textColor="#f9f073"
-        android:textSize="36sp"
+        android:textSize="@dimen/_30ssp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/imageButton7"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.007" />
+        app:layout_constraintVertical_bias="0.066" />
 
     <TextView
         android:id="@+id/textView2"
@@ -29,26 +28,24 @@
         android:layout_height="wrap_content"
         android:text="PLEASE CHOOSE AN OPTION."
         android:textColor="#f9f073"
-        android:textSize="22sp"
+        android:textSize="@dimen/_18ssp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView1"
-        app:layout_constraintVertical_bias="0.019" />
+        app:layout_constraintVertical_bias="0.041" />
 
     <ImageButton
-        android:id="@+id/imageButton3"
-        android:layout_width="380dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="465dp"
+        android:id="@+id/carbtn"
+        android:layout_width="@dimen/_270sdp"
+        android:layout_height="@dimen/_90sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/display"
-        app:layout_constraintVertical_bias="0.041"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.265"
         app:srcCompat="@drawable/carpre" />
 
     <TextView
@@ -57,25 +54,25 @@
         android:layout_height="wrap_content"
         android:text="CAR"
         android:textColor="@color/black"
-        android:textSize="40sp"
+        android:textSize="@dimen/_30ssp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/imageButton3"
+        app:layout_constraintBottom_toBottomOf="@+id/carbtn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.087"
+        app:layout_constraintHorizontal_bias="0.105"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.456" />
+        app:layout_constraintTop_toTopOf="@+id/carbtn"
+        app:layout_constraintVertical_bias="0.129" />
 
     <ImageButton
         android:id="@+id/imageButton4"
-        android:layout_width="380dp"
-        android:layout_height="130dp"
+        android:layout_width="@dimen/_270sdp"
+        android:layout_height="@dimen/_90sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton3"
-        app:layout_constraintVertical_bias="0.044"
+        app:layout_constraintTop_toBottomOf="@+id/carbtn"
+        app:layout_constraintVertical_bias="0.055"
         app:srcCompat="@drawable/car" />
 
     <TextView
@@ -84,26 +81,31 @@
         android:layout_height="wrap_content"
         android:text="CAR+"
         android:textColor="@color/black"
-        android:textSize="40sp"
+        android:textSize="@dimen/_30ssp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/imageButton4"
+        app:layout_constraintBottom_toBottomOf="@+id/imageButton7"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.093"
+        app:layout_constraintHorizontal_bias="0.13"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton3"
-        app:layout_constraintVertical_bias="0.244" />
+        app:layout_constraintTop_toBottomOf="@+id/carbtn"
+        app:layout_constraintVertical_bias="0.111" />
 
     <ImageButton
         android:id="@+id/imageButton6"
-        android:layout_width="380dp"
-        android:layout_height="130dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="@dimen/_270sdp"
+        android:layout_height="@dimen/_90sdp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_19sdp"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton7"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintHorizontal_bias="0.437"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButton4"
-        app:layout_constraintVertical_bias="0.082"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/auto" />
+
 
     <TextView
         android:id="@+id/textView8"
@@ -111,23 +113,27 @@
         android:layout_height="wrap_content"
         android:text="AUTO"
         android:textColor="@color/black"
-        android:textSize="40sp"
+        android:textSize="@dimen/_30ssp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/imageButton6"
-        app:layout_constraintEnd_toEndOf="@+id/imageButton6"
-        app:layout_constraintHorizontal_bias="0.047"
-        app:layout_constraintStart_toStartOf="@+id/imageButton6"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton4"
-        app:layout_constraintVertical_bias="0.23" />
+        app:layout_constraintBottom_toBottomOf="@+id/imageButton7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.119"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.704" />
 
     <ImageButton
         android:id="@+id/imageButton7"
-        android:layout_width="380dp"
-        android:layout_height="130dp"
+        android:layout_width="@dimen/_270sdp"
+        android:layout_height="@dimen/_90sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_9sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.542"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton6"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton4"
+        app:layout_constraintVertical_bias="0.883"
         app:srcCompat="@drawable/bike" />
 
     <TextView
@@ -136,48 +142,38 @@
         android:layout_height="wrap_content"
         android:text="BIKE"
         android:textColor="@color/black"
-        android:textSize="40sp"
+        android:textSize="@dimen/_30ssp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/imageButton7"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.088"
+        app:layout_constraintHorizontal_bias="0.125"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageButton7"
-        app:layout_constraintVertical_bias="0.207" />
+        app:layout_constraintVertical_bias="0.195" />
 
     <ImageView
         android:id="@+id/menu_button"
-        android:layout_width="0dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="7dp"
-        android:layout_marginEnd="6dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/logoutbtn"
-        app:layout_constraintHorizontal_bias="0.018"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.007"
-        app:srcCompat="@drawable/ic_baseline_dehaze_24" />
-
-    <Button
-        android:id="@+id/logoutbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="216dp"
-        android:text="Logout"
-        app:layout_constraintEnd_toStartOf="@+id/display"
-        app:layout_constraintStart_toEndOf="@+id/imageView5"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.142"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.079"
+        app:srcCompat="@drawable/ic_baseline_dehaze_24" />
 
     <ImageView
         android:id="@+id/display"
-        android:layout_width="36dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginStart="@dimen/_80sdp"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:layout_marginBottom="@dimen/_65sdp"
+        app:layout_constraintBottom_toTopOf="@+id/carbtn"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView1"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/com_facebook_profile_picture_blank_square" />
 

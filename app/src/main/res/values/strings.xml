@@ -33,4 +33,9 @@
     <string name="facebook_btn">Google button</string>
     <string name="backbtn">back button</string>
     <string name="continue_with_google">Continue With Google</string>
+
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="API_KEY">AIzaSyCO4ubh_IBZn-XyaDMYimbaQaN6v1MVNio</string>
+    <string name="Karachi">Karachi</string>
+    <string name="map">location map</string>
 </resources>

@@ -83,7 +83,7 @@ public class SignUpActivity extends AppCompatActivity {
         @Override
         public void onSuccess(AuthResult authResult) {
             Toast.makeText(SignUpActivity.this, "Congratulations, You are successfully registered", Toast.LENGTH_LONG).show();
-            Intent homeIntent = new Intent(SignUpActivity.this, Options.class);
+            Intent homeIntent = new Intent(SignUpActivity.this, OptionsActivity.class);
             startActivity(homeIntent);
         }
     };

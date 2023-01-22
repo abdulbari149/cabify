@@ -6,42 +6,41 @@
     android:layout_height="match_parent"
     android:background="#46dbc8"
     android:backgroundTint="#46dbc8"
-    tools:context=".signupactivity">
+    tools:context=".SignUpActivity">
 
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="411dp"
-        android:layout_height="260dp"
+        android:layout_width="@dimen/_411sdp"
+        android:layout_height="@dimen/_260sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.008"
+        app:layout_constraintVertical_bias="0.061"
         app:srcCompat="@drawable/cabl" />
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="389dp"
-        android:layout_height="31dp"
+        android:layout_width="@dimen/_389sdp"
+        android:layout_height="@dimen/_31sdp"
         android:gravity="center_horizontal"
         android:text="@string/signdes"
         android:textColor="#0B0B0A"
-        android:textSize="16sp"
+        android:textSize="@dimen/_13ssp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.642"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.377" />
+        app:layout_constraintVertical_bias="0.517" />
 
     <EditText
         android:id="@+id/email"
-        android:layout_width="262dp"
-        android:layout_height="48dp"
-
+        android:layout_width="@dimen/_262sdp"
+        android:layout_height="@dimen/_48sdp"
         android:ems="10"
         android:hint="@string/logem"
         android:inputType="textEmailAddress"
@@ -49,65 +48,63 @@
         android:textColorHint="#121010"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.375"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
+        app:layout_constraintVertical_bias="0.575" />
 
     <EditText
         android:id="@+id/password"
-        android:layout_width="262dp"
-        android:layout_height="48dp"
+        android:layout_width="@dimen/_262sdp"
+        android:layout_height="@dimen/_48sdp"
         android:ems="10"
         android:hint="@string/logpwd"
         android:inputType="textPassword"
         android:textColor="#150C0C"
-
         android:textColorHint="#121010"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.375"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.617" />
+        app:layout_constraintVertical_bias="0.676" />
 
     <EditText
         android:id="@+id/cnfpassword"
-        android:layout_width="262dp"
-        android:layout_height="48dp"
+        android:layout_width="@dimen/_262sdp"
+        android:layout_height="@dimen/_48sdp"
         android:ems="10"
         android:hint="@string/cnfpwd"
         android:inputType="textPassword"
         android:textColor="#0E0909"
-
         android:textColorHint="#121010"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.375"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.73" />
+        app:layout_constraintVertical_bias="0.778" />
 
     <Button
         android:id="@+id/signupbtn"
-        android:layout_width="128dp"
-        android:layout_height="57dp"
+        android:layout_width="@dimen/_128sdp"
+        android:layout_height="@dimen/_57sdp"
         android:background="#46dbc8"
         android:backgroundTint="#46dbc8"
         android:text="@string/mainsignup"
         android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textSize="@dimen/_20ssp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.462"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.942" />
+        app:layout_constraintVertical_bias="0.962" />
 
     <ImageButton
         android:id="@+id/backBtn"
-        android:layout_width="58dp"
-        android:layout_height="48dp"
+        android:layout_width="@dimen/_58sdp"
+        android:layout_height="@dimen/_48sdp"
         android:layout_marginTop="16dp"
         android:backgroundTint="#FBFBFB"
         android:contentDescription="@string/backbtn"
@@ -125,10 +122,10 @@
         android:textColor="#050505"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.222"
+        app:layout_constraintHorizontal_bias="0.436"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.8" />
+        app:layout_constraintVertical_bias="0.853" />
 
     <TextView
         android:id="@+id/clickhere"
@@ -141,6 +138,6 @@
         app:layout_constraintHorizontal_bias="0.625"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.8" />
+        app:layout_constraintVertical_bias="0.825" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

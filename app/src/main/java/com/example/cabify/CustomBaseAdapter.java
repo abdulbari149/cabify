@@ -23,7 +23,6 @@ public class CustomBaseAdapter extends BaseAdapter {
         this.captainlist = captainlist;
         this.image = image;
         inflater = LayoutInflater.from(ctx);
-
     }
 
     @Override
@@ -48,7 +47,7 @@ public class CustomBaseAdapter extends BaseAdapter {
         TextView txtview = (TextView) convertView.findViewById(R.id.text);
         ImageView imgview = (ImageView) convertView.findViewById(R.id.image);
         txtview.setText(captainlist[position]);
-        imgview.setImageResource(image[position]);
+        imgview.setImageResource(image[0]);
         return convertView;
     }
 }

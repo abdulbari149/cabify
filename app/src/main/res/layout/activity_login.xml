@@ -81,7 +81,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <ImageButton
-        android:id="@+id/button4"
+        android:id="@+id/loginBackBtn"
         android:layout_width="58dp"
         android:layout_height="48dp"
         android:backgroundTint="#F4F1F1"
@@ -109,7 +109,7 @@
         app:layout_constraintTop_toBottomOf="@+id/loginTitle" />
 
     <ImageView
-        android:id="@+id/googlebtn"
+        android:id="@+id/googleBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:contentDescription="TODO"
@@ -122,7 +122,7 @@
         app:srcCompat="@drawable/gg" />
 
     <ImageView
-        android:id="@+id/fb"
+        android:id="@+id/facebookBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:contentDescription="TODO"

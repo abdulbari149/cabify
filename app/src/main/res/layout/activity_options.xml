@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:backgroundTint="#130C0C"
-    tools:context="com.example.cabify.Options">
+    tools:context="com.example.cabify.OptionsActivity">
 
     <TextView
         android:id="@+id/textView1"
@@ -39,7 +39,7 @@
         app:layout_constraintVertical_bias="0.019" />
 
     <ImageButton
-        android:id="@+id/imageButton3"
+        android:id="@+id/carImageButton"
         android:layout_width="380dp"
         android:layout_height="0dp"
         android:layout_marginBottom="465dp"
@@ -59,7 +59,7 @@
         android:textColor="@color/black"
         android:textSize="40sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/imageButton3"
+        app:layout_constraintBottom_toBottomOf="@+id/carImageButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.087"
         app:layout_constraintStart_toStartOf="parent"
@@ -74,7 +74,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton3"
+        app:layout_constraintTop_toBottomOf="@+id/carImageButton"
         app:layout_constraintVertical_bias="0.044"
         app:srcCompat="@drawable/car" />
 
@@ -90,7 +90,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.093"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton3"
+        app:layout_constraintTop_toBottomOf="@+id/carImageButton"
         app:layout_constraintVertical_bias="0.244" />
 
     <ImageButton

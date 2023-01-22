@@ -14,8 +14,11 @@
     <TextView
         android:id="@+id/text"
         android:layout_width="wrap_content"
+        android:paddingTop="@dimen/_11sdp"
+        android:fontFamily="sans-serif"
+        android:textStyle="bold"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/_15ssp"
+        android:textSize="@dimen/_20ssp"
         android:text="MyText" />
 
 </LinearLayout>

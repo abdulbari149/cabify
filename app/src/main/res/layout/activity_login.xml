@@ -18,7 +18,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.167"
+        app:layout_constraintVertical_bias="0.145"
         app:srcCompat="@drawable/login_screen_image" />
 
     <TextView
@@ -31,8 +31,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/loginBtn"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.405"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.463" />
 
     <EditText
         android:id="@+id/loginPassword"
@@ -44,10 +46,10 @@
         android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintHorizontal_bias="0.714"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.674" />
+        app:layout_constraintVertical_bias="0.645" />
 
     <Button
         android:id="@+id/loginBtn"
@@ -62,11 +64,11 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.889" />
+        app:layout_constraintVertical_bias="0.861" />
 
     <CheckBox
         android:id="@+id/checkBox"
-        android:layout_width="@dimen/_307sdp"
+        android:layout_width="@dimen/_290sdp"
         android:layout_height="@dimen/_40sdp"
         android:layout_marginTop="24dp"
         android:hint="@string/check"
@@ -85,10 +87,10 @@
         android:contentDescription="@string/google_btn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintHorizontal_bias="0.031"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.037"
+        app:layout_constraintVertical_bias="0.023"
         app:srcCompat="@drawable/backbtn"
         tools:ignore="RedundantDescriptionCheck" />
 

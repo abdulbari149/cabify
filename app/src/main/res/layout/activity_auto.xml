@@ -12,6 +12,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingHorizontal="@dimen/_5sdp"
+        android:backgroundTint="#FFFFFF"
+        android:textColor="#000000"
         android:text="SELECT DROP OFF"
         android:textSize="@dimen/_15ssp"
         android:textStyle="bold"

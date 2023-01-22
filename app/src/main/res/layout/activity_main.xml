@@ -27,14 +27,14 @@
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.569"
+        app:layout_constraintHorizontal_bias="0.432"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.459" />
+        app:layout_constraintVertical_bias="0.48" />
 
     <Button
         android:id="@+id/login"
-        android:layout_width="@dimen/_144sdp"
+        android:layout_width="@dimen/_130sdp"
         android:layout_height="@dimen/_73sdp"
         android:backgroundTint="#eaad1a"
         android:text="@string/mainlogin"
@@ -50,7 +50,7 @@
 
     <Button
         android:id="@+id/signup"
-        android:layout_width="@dimen/_144sdp"
+        android:layout_width="@dimen/_130sdp"
         android:layout_height="@dimen/_73sdp"
         android:backgroundTint="#eaad1a"
         android:text="@string/mainsignup"

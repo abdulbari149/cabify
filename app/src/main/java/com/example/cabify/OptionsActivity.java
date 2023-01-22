@@ -30,7 +30,7 @@ public class OptionsActivity extends AppCompatActivity  {
     View view;
 
 
-    Button logout;
+    Button logout;  
     ImageView dp;
 
     @Override

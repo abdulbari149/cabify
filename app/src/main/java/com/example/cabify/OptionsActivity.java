@@ -34,7 +34,7 @@ public class OptionsActivity extends AppCompatActivity  {
         setContentView(R.layout.activity_options);
         ImageView menuButton = findViewById(R.id.menu_button);
         startVehicleActivityOnClick(R.id.carBtn, "car");
-        startVehicleActivityOnClick(R.id.carPreText, "carPre");
+        startVehicleActivityOnClick(R.id.carPreBtn, "carPre");
         startVehicleActivityOnClick(R.id.autoBtn, "auto");
         startVehicleActivityOnClick(R.id.bikeBtn, "bike");
 

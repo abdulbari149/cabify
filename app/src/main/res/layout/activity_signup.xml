@@ -22,7 +22,7 @@
         app:srcCompat="@drawable/cabl" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/optionsSubtitle"
         android:layout_width="@dimen/_330sdp"
         android:layout_height="@dimen/_31sdp"
         android:gravity="center_horizontal"

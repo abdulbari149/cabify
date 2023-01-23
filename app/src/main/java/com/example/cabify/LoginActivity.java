@@ -34,6 +34,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import java.util.Arrays;
+import java.util.List;
 
 
 public class LoginActivity extends AppCompatActivity {
@@ -57,7 +58,33 @@ public class LoginActivity extends AppCompatActivity {
 
     private final View.OnClickListener backBtnHandler = view -> onBackPressed();
 
-    private final View.OnClickListener facebookHandler = v -> LoginManager.getInstance().logInWithReadPermissions(LoginActivity.this, Arrays.asList("public_profile"));
+    private final View.OnClickListener facebookHandler = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            // Facebook Listener
+
+            List<String> permissions = Arrays.asList("public_profile");
+            LoginManager
+                    .getInstance()
+                    .logInWithReadPermissions(LoginActivity.this, permissions);
+        }
+    };
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        callbackManager.onActivityResult(requestCode, resultCode, data);
+        super.onActivityResult(requestCode, resultCode, data);
+//        if (requestCode == 100) {
+//            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+//            try {
+//                task.getResult(ApiException.class);
+//                startActivity(new Intent(LoginActivity.this, OptionsActivity.class));
+//                finish();
+//            } catch (ApiException e) {
+//                Toast.makeText(this, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
+//            }
+//        }
+    }
 
     private final View.OnClickListener googleHandler = new View.OnClickListener() {
         @Override
@@ -81,7 +108,8 @@ public class LoginActivity extends AppCompatActivity {
         googleSignInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail().build();
         googleSignInClient = GoogleSignIn.getClient(this, googleSignInOptions);
-        LoginManager.getInstance().registerCallback(callbackManager, this.facebookCallback);
+        LoginManager.getInstance()
+                .registerCallback(callbackManager, this.facebookCallback);
 
     }
 
@@ -127,21 +155,7 @@ public class LoginActivity extends AppCompatActivity {
     };
 
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        callbackManager.onActivityResult(requestCode, resultCode, data);
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 100) {
-            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
-            try {
-                task.getResult(ApiException.class);
-                startActivity(new Intent(LoginActivity.this, OptionsActivity.class));
-                finish();
-            } catch (ApiException e) {
-                Toast.makeText(this, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        }
-    }
+
 }
 
 

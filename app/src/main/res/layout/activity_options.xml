@@ -9,37 +9,38 @@
     tools:context="com.example.cabify.OptionsActivity">
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/optionsTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CABIFY"
+        android:text="@string/options_title"
         android:textColor="#f9f073"
         android:textSize="@dimen/_30ssp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/imageButton7"
+        app:layout_constraintBottom_toBottomOf="@+id/bikeBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.066" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/optionsSubtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="PLEASE CHOOSE AN OPTION."
+        android:text="@string/options_sub_title"
         android:textColor="#f9f073"
         android:textSize="@dimen/_18ssp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView1"
+        app:layout_constraintTop_toBottomOf="@+id/optionsTitle"
         app:layout_constraintVertical_bias="0.041" />
 
     <ImageButton
-        android:id="@+id/carbtn"
+        android:id="@+id/carBtn"
         android:layout_width="@dimen/_270sdp"
         android:layout_height="@dimen/_90sdp"
+        android:contentDescription="@string/car_btn_speakable_text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.483"
@@ -49,73 +50,75 @@
         app:srcCompat="@drawable/carpre" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/carText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CAR"
+        android:text="@string/car"
         android:textColor="@color/black"
         android:textSize="@dimen/_30ssp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/carbtn"
+        app:layout_constraintBottom_toBottomOf="@+id/carBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.105"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/carbtn"
+        app:layout_constraintTop_toTopOf="@+id/carBtn"
         app:layout_constraintVertical_bias="0.129" />
 
     <ImageButton
-        android:id="@+id/imageButton4"
+        android:id="@+id/carPreBtn"
         android:layout_width="@dimen/_270sdp"
         android:layout_height="@dimen/_90sdp"
+        android:contentDescription="@string/car_pre_btn_speakable_text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/carbtn"
+        app:layout_constraintTop_toBottomOf="@+id/carBtn"
         app:layout_constraintVertical_bias="0.055"
         app:srcCompat="@drawable/car" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/carPreText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CAR+"
+        android:text="@string/carPre"
         android:textColor="@color/black"
         android:textSize="@dimen/_30ssp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/imageButton7"
+        app:layout_constraintBottom_toBottomOf="@+id/bikeBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.13"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/carbtn"
+        app:layout_constraintTop_toBottomOf="@+id/carBtn"
         app:layout_constraintVertical_bias="0.111" />
 
     <ImageButton
-        android:id="@+id/imageButton6"
+        android:id="@+id/autoBtn"
         android:layout_width="@dimen/_270sdp"
         android:layout_height="@dimen/_90sdp"
         android:layout_marginStart="15dp"
         android:layout_marginTop="@dimen/_20sdp"
         android:layout_marginEnd="@dimen/_10sdp"
         android:layout_marginBottom="@dimen/_19sdp"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton7"
+        android:contentDescription="@string/auto_btn_speakable_text"
+        app:layout_constraintBottom_toTopOf="@+id/bikeBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.437"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton4"
+        app:layout_constraintTop_toBottomOf="@+id/carPreBtn"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/auto" />
 
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/autoText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="AUTO"
+        android:text="@string/auto"
         android:textColor="@color/black"
         android:textSize="@dimen/_30ssp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/imageButton7"
+        app:layout_constraintBottom_toBottomOf="@+id/bikeBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.119"
         app:layout_constraintStart_toStartOf="parent"
@@ -123,24 +126,25 @@
         app:layout_constraintVertical_bias="0.704" />
 
     <ImageButton
-        android:id="@+id/imageButton7"
+        android:id="@+id/bikeBtn"
         android:layout_width="@dimen/_270sdp"
         android:layout_height="@dimen/_90sdp"
         android:layout_marginStart="@dimen/_10sdp"
         android:layout_marginEnd="@dimen/_9sdp"
+        android:contentDescription="@string/bike_btn_speakable_text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.542"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton4"
+        app:layout_constraintTop_toBottomOf="@+id/carPreBtn"
         app:layout_constraintVertical_bias="0.883"
         app:srcCompat="@drawable/bike" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/bikeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="BIKE"
+        android:text="@string/bike"
         android:textColor="@color/black"
         android:textSize="@dimen/_30ssp"
         android:textStyle="bold"
@@ -148,20 +152,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.125"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageButton7"
+        app:layout_constraintTop_toTopOf="@+id/bikeBtn"
         app:layout_constraintVertical_bias="0.195" />
 
     <ImageView
         android:id="@+id/menu_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:contentDescription="@string/menu_btn_speakable_text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.142"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.079"
-        app:srcCompat="@drawable/ic_baseline_dehaze_24" />
+        app:srcCompat="@drawable/ic_baseline_dehaze_24"
+        tools:ignore="RedundantDescriptionCheck" />
 
     <ImageView
         android:id="@+id/display"
@@ -171,11 +177,12 @@
         android:layout_marginTop="@dimen/_3sdp"
         android:layout_marginEnd="@dimen/_15sdp"
         android:layout_marginBottom="@dimen/_65sdp"
-        app:layout_constraintBottom_toTopOf="@+id/carbtn"
+        app:layout_constraintBottom_toTopOf="@+id/carBtn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView1"
+        app:layout_constraintStart_toEndOf="@+id/optionsTitle"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/com_facebook_profile_picture_blank_square" />
+        app:srcCompat="@drawable/com_facebook_profile_picture_blank_square"
+        android:contentDescription="@string/profile_pic_speakable_text" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

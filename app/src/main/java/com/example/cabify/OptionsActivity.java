@@ -7,25 +7,10 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
-import android.widget.Toast;
-
-import com.facebook.AccessToken;
-import com.facebook.GraphRequest;
-import com.facebook.GraphResponse;
-import com.facebook.login.LoginManager;
-import com.squareup.picasso.Picasso;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 public class OptionsActivity extends AppCompatActivity  {
-    ImageButton carbutton;
-    ImageButton carprebutton;
-    ImageButton autobutton;
-    ImageButton bikebutton;
     PopupMenu popup_menu;
     View view;
 
@@ -33,46 +18,25 @@ public class OptionsActivity extends AppCompatActivity  {
     Button logout;  
     ImageView dp;
 
+    private void startVehicleActivityOnClick(int id, String vehicleType) {
+        findViewById(id).setOnClickListener(
+                v -> {
+                    Intent vehicleIntent = new Intent(OptionsActivity.this, VehicleActivity.class);
+                    vehicleIntent.putExtra("vehicle_type", vehicleType);
+                    startActivity(vehicleIntent);
+                }
+        );
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_options);
         ImageView menuButton = findViewById(R.id.menu_button);
-        carbutton = findViewById(R.id.carbtn);
-        carprebutton = findViewById(R.id.imageButton4);
-        autobutton = findViewById(R.id.imageButton6);
-        bikebutton = findViewById(R.id.imageButton7);
-
-
-
-        carbutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent car_select = new Intent(OptionsActivity.this,Car.class);
-                startActivity(car_select);
-            }
-        });
-        carprebutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent car_pre_select = new Intent(OptionsActivity.this,CarPre.class);
-                startActivity(car_pre_select);
-            }
-        });
-        autobutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent auto_select = new Intent(OptionsActivity.this,Auto.class);
-                startActivity(auto_select);
-            }
-        });
-        bikebutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent bike_select = new Intent(OptionsActivity.this,Bike.class);
-                startActivity(bike_select);
-            }
-        });
+        startVehicleActivityOnClick(R.id.carBtn, "car");
+        startVehicleActivityOnClick(R.id.carPreText, "carPre");
+        startVehicleActivityOnClick(R.id.autoBtn, "auto");
+        startVehicleActivityOnClick(R.id.bikeBtn, "bike");
 
         menuButton.setOnClickListener(new View.OnClickListener() {
             @Override

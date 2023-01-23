@@ -3,7 +3,6 @@ package com.example.cabify;
 import static android.content.ContentValues.TAG;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -47,13 +46,13 @@ public class LocationActivity extends AppCompatActivity implements OnMapReadyCal
         autocompleteFragment.setPlaceFields(Arrays.asList(Place.Field.ID, Place.Field.NAME));
         autocompleteFragment.setOnPlaceSelectedListener(new PlaceSelectionListener() {
             @Override
-            public void onPlaceSelected(@NonNull Place place) {
+            public void onPlaceSelected(Place place) {
                 // TODO: Get info about the selected place.
                 Log.i(TAG, "Place: " + place.getName() + ", " + place.getId());
             }
 
             @Override
-            public void onError(@NonNull Status status) {
+            public void onError(Status status) {
             // TODO: Handle the error.
             Log.i(TAG, "An error occurred: " + status);
         }

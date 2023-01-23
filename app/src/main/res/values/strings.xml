@@ -33,7 +33,18 @@
     <string name="facebook_btn">Google button</string>
     <string name="backbtn">back button</string>
     <string name="continue_with_google">Continue With Google</string>
-
+    <string name="options_title">CABIFY</string>
+    <string name="options_sub_title">PLEASE CHOOSE AN OPTION.</string>
+    <string name="car">CAR</string>
+    <string name="carPre">CAR+</string>
+    <string name="auto">AUTO</string>
+    <string name="bike">BIKE</string>
+    <string name="car_btn_speakable_text">select car</string>
+    <string name="car_pre_btn_speakable_text">select car premium</string>
+    <string name="auto_btn_speakable_text">select auto</string>
+    <string name="bike_btn_speakable_text">select bike</string>
+    <string name="menu_btn_speakable_text">Menu Button</string>
+    <string name="profile_pic_speakable_text">this is profile picture</string>
     <string name="title_activity_maps">MapsActivity</string>
     <string name="API_KEY">AIzaSyCO4ubh_IBZn-XyaDMYimbaQaN6v1MVNio</string>
     <string name="Karachi">Karachi</string>

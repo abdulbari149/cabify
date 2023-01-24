@@ -16,8 +16,8 @@ import org.w3c.dom.Text;
 import java.util.ArrayList;
 
 
-public class RiderListViewAdapter extends ArrayAdapter<Captain>{
-    public RiderListViewAdapter(Context context, ArrayList<Captain> CaptainArrayList){
+public class RidesAdapter extends ArrayAdapter<Captain>{
+    public RidesAdapter(Context context, ArrayList<Captain> CaptainArrayList){
 
         super(context,R.layout.list_item,CaptainArrayList);
 

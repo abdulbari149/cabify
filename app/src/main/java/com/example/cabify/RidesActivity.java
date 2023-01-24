@@ -9,20 +9,20 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.cabify.databinding.ActivityMainBinding;
-import com.example.cabify.databinding.ActivityRiderListViewBinding;
+import com.example.cabify.databinding.ActivityRidesActivityBinding;
 
 
 import java.util.ArrayList;
 
-public class RiderListView extends AppCompatActivity {
+public class RidesActivity extends AppCompatActivity {
 
 
-    ActivityRiderListViewBinding binding;
+    ActivityRidesActivityBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityRiderListViewBinding.inflate(getLayoutInflater());
+        binding = ActivityRidesActivityBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
 
@@ -48,8 +48,8 @@ public class RiderListView extends AppCompatActivity {
         }
 
 
-        RiderListViewAdapter riderListViewAdapter = new RiderListViewAdapter(RiderListView.this, captainArrayList);
-        binding.List.setAdapter(riderListViewAdapter);
+        RidesActivityAdapter ridesAdapter = new RidesAdapter(RidesActivity.this, captainArrayList);
+        binding.List.setAdapter(ridesAdapter);
     }}
 //
 //        binding.

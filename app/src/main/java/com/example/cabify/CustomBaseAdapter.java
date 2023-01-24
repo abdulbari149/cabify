@@ -1,5 +1,7 @@
+
 package com.example.cabify;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -41,13 +43,16 @@ public class CustomBaseAdapter extends BaseAdapter {
         return 0;
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         convertView = inflater.inflate(R.layout.activity_custom_list_view,null);
         TextView txtview = (TextView) convertView.findViewById(R.id.text);
         ImageView imgview = (ImageView) convertView.findViewById(R.id.image);
+        TextView stat=(TextView) convertView.findViewById(R.id.status);
         txtview.setText(captainlist[position]);
         imgview.setImageResource(image[0]);
+        stat.setText("Available");
         return convertView;
     }
 }

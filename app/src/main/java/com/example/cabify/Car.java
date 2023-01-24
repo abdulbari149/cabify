@@ -8,7 +8,7 @@ import android.widget.ListView;
 
 public class Car extends AppCompatActivity {
     String captainlist [] = {"Captain1","Captain2","Captain3","Captain4","Captain5"};
-    int image [] = {R.drawable.person};
+    int image [] = {R.drawable.ic_baseline_person_24};
     ListView listView;
 
     @Override
@@ -18,5 +18,6 @@ public class Car extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.car_list);
         CustomBaseAdapter customBaseAdapter = new CustomBaseAdapter(getApplicationContext(),captainlist,image);
         listView.setAdapter(customBaseAdapter);
+
     }
 }

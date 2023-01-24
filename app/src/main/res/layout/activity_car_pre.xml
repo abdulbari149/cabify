@@ -6,10 +6,11 @@
     android:layout_height="match_parent"
     android:background="@drawable/maps"
     tools:context=".CarPre">
+
     <Button
         android:id="@+id/carprebtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="183dp"
+        android:layout_height="51dp"
         android:paddingHorizontal="@dimen/_5sdp"
         android:text="SELECT DROP OFF"
         android:textSize="@dimen/_15ssp"
@@ -21,15 +22,18 @@
         app:layout_constraintVertical_bias="0.951" />
 
     <ListView
-        android:layout_width="@dimen/_306sdp"
-        android:layout_height="@dimen/_470sdp"
         android:id="@+id/car_pre_list"
+        android:layout_width="401dp"
+        android:layout_height="728dp"
         android:divider="@color/black"
         android:dividerHeight="@dimen/_1sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0">
+
+
+    </ListView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

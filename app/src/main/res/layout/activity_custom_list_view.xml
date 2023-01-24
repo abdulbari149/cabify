@@ -7,15 +7,36 @@
     tools:context=".CustomListView">
 
     <ImageView
+
+        android:id="@+id/image"
         android:layout_width="@dimen/_90sdp"
         android:layout_height="@dimen/_80sdp"
-        android:id="@+id/image" />
+        android:layout_marginTop="10dp"
+        android:hapticFeedbackEnabled="false"
+        app:srcCompat="@drawable/ic_baseline_person_24" />
 
     <TextView
         android:id="@+id/text"
-        android:layout_width="wrap_content"
+        android:layout_width="108dp"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/_15ssp"
-        android:text="MyText" />
+        android:layout_marginVertical="60dp"
+
+        android:text="Name"
+        android:textColor="#0B0909"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/status"
+        android:layout_width="117dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="50dp"
+        android:layout_weight="1"
+        android:text="Available"
+        android:textColor="#080909"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
 
 </LinearLayout>

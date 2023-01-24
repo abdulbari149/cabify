@@ -8,7 +8,7 @@
     tools:context=".Auto">
 
     <Button
-        android:id="@+id/autobtn"
+        android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingHorizontal="@dimen/_5sdp"
@@ -22,9 +22,9 @@
         app:layout_constraintVertical_bias="0.951" />
 
     <ListView
-        android:layout_width="@dimen/_306sdp"
-        android:layout_height="@dimen/_470sdp"
         android:id="@+id/auto_list"
+        android:layout_width="406dp"
+        android:layout_height="638dp"
         android:divider="@color/black"
         android:dividerHeight="@dimen/_1sdp"
         app:layout_constraintBottom_toBottomOf="parent"

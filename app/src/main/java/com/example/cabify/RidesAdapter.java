@@ -41,6 +41,10 @@ public class RidesAdapter extends ArrayAdapter<Captain>{
         TextView Dropoff = convertView.findViewById(R.id.dropoff);
         TextView Cost = convertView.findViewById(R.id.cost);
         TextView Duration = convertView.findViewById(R.id.duration);
+        TextView Durtime = convertView.findViewById(R.id.Durtime);
+        TextView cosRS = convertView.findViewById(R.id.cosRS);
+        TextView pick = convertView.findViewById(R.id.pick);
+        TextView drop = convertView.findViewById(R.id.drop);
 
 
         imageView.setImageResource(captain.imageid);
@@ -49,8 +53,10 @@ public class RidesAdapter extends ArrayAdapter<Captain>{
         Dropoff.setText(captain.dropoff);
         Duration.setText(captain.duration);
         Cost.setText(captain.cost);
-
-
+        Durtime.setText(captain.Durtime);
+        cosRS.setText(captain.cosRS);
+        pick.setText(captain.pick);
+        drop.setText(captain.drop);
 
         return convertView;
     }

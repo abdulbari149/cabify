@@ -50,7 +50,7 @@ public class SignUpActivity extends AppCompatActivity {
         clickHere.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(SignUpActivity.this, "Clicked", Toast.LENGTH_SHORT).show();
+               startActivity(new Intent(SignUpActivity.this,LoginActivity.class));
 
             }
         });

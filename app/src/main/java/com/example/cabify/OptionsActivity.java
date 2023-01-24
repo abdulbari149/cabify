@@ -1,5 +1,6 @@
 package com.example.cabify;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -9,14 +10,33 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.PopupMenu;
+import android.widget.Toast;
+
+import com.facebook.AccessToken;
+import com.facebook.GraphRequest;
+import com.facebook.GraphResponse;
+import com.facebook.login.LoginManager;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.squareup.picasso.Picasso;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class OptionsActivity extends AppCompatActivity  {
     PopupMenu popup_menu;
     View view;
-
-
-    Button logout;  
     ImageView dp;
+    GoogleSignInOptions googleSignInOptions;
+    GoogleSignInClient googleSignInClient;
+
 
     private void startVehicleActivityOnClick(int id, String vehicleType) {
         findViewById(id).setOnClickListener(
@@ -45,24 +65,23 @@ public class OptionsActivity extends AppCompatActivity  {
                 popup.getMenuInflater().inflate(R.menu.popup, popup.getMenu());
                 popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                     public boolean onMenuItemClick(MenuItem item) {
-                        switch (item.getItemId()) {
-                            case R.id.menu_item_1:
-                                // Do something for menu item 1
-                                return true;
-                            case R.id.menu_item_2:
-                                Intent logout = new Intent(OptionsActivity.this,LoginActivity.class);
-                                startActivity(logout);
-                                return true;
-                            default:
-                                return false;
+                        if (item.getItemId() == R.id.menu_item_1) {
+                            googleSignInClient.signOut().addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    finish();
+                                    Toast.makeText(OptionsActivity.this, "Signed out Successfully", Toast.LENGTH_SHORT).show();
+                                    startActivity(new Intent(OptionsActivity.this,LoginActivity.class));
+                                }
+                            });
                         }
+                        return false;
                     }
                 });
                 popup.show();
             }
         });
 //        AccessToken accessToken=AccessToken.getCurrentAccessToken();
-//        logout=findViewById(R.id.logoutbtn);
 //        dp=findViewById(R.id.display);
 //
 //        GraphRequest request = GraphRequest.newMeRequest(
@@ -89,14 +108,6 @@ public class OptionsActivity extends AppCompatActivity  {
 //        parameters.putString("fields", "id,name,link,picture.type(large)");
 //        request.setParameters(parameters);
 //        request.executeAsync();
-//        logout.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                LoginManager.getInstance().logOut();
-//                startActivity(new Intent(Options.this, SignUpActivity.class));
-//                finish();
-//            }
-//        });
 
     }
 }

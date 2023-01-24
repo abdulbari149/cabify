@@ -7,22 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".VehicleActivity">
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingHorizontal="@dimen/_5sdp"
-        android:backgroundTint="#FFFFFF"
-        android:textColor="#000000"
-        android:text="SELECT DROP OFF"
-        android:textSize="@dimen/_15ssp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.951" />
-
     <ListView
         android:layout_width="@dimen/_306sdp"
         android:layout_height="@dimen/_470sdp"

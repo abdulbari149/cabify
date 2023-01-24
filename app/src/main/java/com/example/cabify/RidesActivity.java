@@ -27,22 +27,26 @@ public class RidesActivity extends AppCompatActivity {
 
 
         int[] imageid = {R.drawable.cap1, R.drawable.cap1, R.drawable.cap1, R.drawable.cap1, R.drawable.cap1,
-                R.drawable.cap1};
-        String[] name = {"Usaid", "Rafay", "Maaz", "Wali", "Mustafa", "Faizan"};
-        String[] pickup = {"Gulshan", "Ancholi?", "Nazimabad?",
-                "Saddar", "Luckyone", "Nueplex"};
-        String[] dropoff = {"Saddar", "Luckyone", "Nueplex", "Ancholi?", "Nazimabad?",
-                "abc"};
-        String[] duration = {"1hr", "10min", "7min", "67min", "2hr",
-                "6hr"};
-        String[] cost = {"500", "400", "300", "200", "144", "8888"};
+                R.drawable.cap1,  R.drawable.cap1,  R.drawable.cap1};
+        String[] name = {"Usaid", "Rafay", "Maaz", "Wali", "Mustafa", "Faizan","Bari","Ammar"};
+        String[] pickup = {"Gulshan", "Ancholi", "Nazimabad ",
+                "Saddar", "Luckyone", "Nueplex","Clifton","DHA"};
+        String[] dropoff = {"Saddar", "Luckyone", "Nueplex", "Ancholi", "Nazimabad ",
+                "abc","Nazimabad ","5star"};
+        String[] Durtime = {"1hr", "10min", "7min", "67min", "2hr",
+                "6hr","1.5hr","30min"};
+        String [] duration = {"Duration:"};
+        String[] cosRS = {"500rs", "400rs", "300rs", "200rs", "144rs", "8888rs","2000rs","550rs"};
+        String [] cost = {"Cost:"};
+        String [] pick = {"(Pick Up)"};
+        String[] drop = {"(Drop Off)"};
 
 
         ArrayList<Captain> captainArrayList = new ArrayList<>();
 
         for (int i = 0; i < imageid.length; i++) {
 
-            Captain captain = new Captain(name[i], pickup[i], dropoff[i], duration[i], cost[i],imageid[i]);
+            Captain captain = new Captain(name[i], pickup[i], dropoff[i], duration[0], cost[0],imageid[i],Durtime[i],cosRS[i],pick[0],drop[0]);
             captainArrayList.add(captain);
 
         }

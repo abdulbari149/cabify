@@ -76,7 +76,12 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+<<<<<<< Updated upstream
 
+=======
+        <activity android:name=".ConfirmationActivity"
+            android:exported="false"/>
+>>>>>>> Stashed changes
         <activity
             android:name=".SignUpActivity"
             android:exported="false" >

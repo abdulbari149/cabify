@@ -101,5 +101,13 @@
     <string name="autocomplete_skipped_message" translatable="false">Address accepted with</string>
     <string name="select_pickup">select pickup</string>
     <string name="select_drop_off">select drop off</string>
+    <string name="dropoff_location">Dropoff Location :</string>
+    <string name="pickup_location">Pickup Location :</string>
+    <string name="estimated_distance">Estimated Distance :</string>
+    <string name="estimated_price">Estimated Price :</string>
+    <string name="tag_for_drop_off">Tag for Drop-off</string>
+    <string name="tag_for_pick_up">Tag for pick-up</string>
+    <string name="tage_for_distance">Tage for Distance</string>
+    <string name="tag_for_price">Tag for Price</string>
 
 </resources>

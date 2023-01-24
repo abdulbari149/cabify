@@ -56,6 +56,7 @@ import com.google.android.libraries.places.api.model.TypeFilter;
 import com.google.android.libraries.places.api.net.PlacesClient;
 import com.google.android.libraries.places.widget.Autocomplete;
 import com.google.android.libraries.places.widget.model.AutocompleteActivityMode;
+import com.google.maps.android.SphericalUtil;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -69,7 +70,10 @@ public class LocationActivity extends AppCompatActivity implements OnMapReadyCal
 
     private static final String TAG = "ADDRESS_AUTOCOMPLETE";
     private static final String MAP_FRAGMENT_TAG = "MAP";
-    private LatLng coordinates;
+    private LatLng coordinates1;
+    public LatLng loc1;
+    public LatLng loc2;
+    public String distance_str;
     private boolean checkProximity = false;
     private SupportMapFragment mapFragment;
     private GoogleMap map;
@@ -81,28 +85,49 @@ public class LocationActivity extends AppCompatActivity implements OnMapReadyCal
 
     private ActivityLocationBinding binding;
 
-    View.OnClickListener startAutocompleteIntentListener = view -> {
+    View.OnClickListener startAutocompleteIntentListener1 = view -> {
         view.setOnClickListener(null);
-        startAutocompleteIntent();
+        startAutocompleteIntent1();
     };
-
+    View.OnClickListener startAutocompleteIntentListener2 = view -> {
+        view.setOnClickListener(null);
+        startAutocompleteIntent2();
+    };
     // [START maps_solutions_android_autocomplete_define]
-    private final ActivityResultLauncher<Intent> startAutocomplete = registerForActivityResult(
+    private final ActivityResultLauncher<Intent> startAutocomplete1 = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
             result -> {
                 if (result.getResultCode() == Activity.RESULT_OK) {
                     Intent intent = result.getData();
                     if (intent != null) {
-                        Place place = Autocomplete.getPlaceFromIntent(intent);
+                        Place place1 = Autocomplete.getPlaceFromIntent(intent);
 
                         // Write a method to read the address components from the Place
                         // and populate the form with the address components
-                        Log.d(TAG, "Place: " + place.getAddressComponents());
-                        fillInAddress(place);
+                        Log.d(TAG, "Place: " + place1.getAddressComponents());
+                        fillInAddress(place1,true);
                     }
                 } else if (result.getResultCode() == Activity.RESULT_CANCELED) {
                     // The user canceled the operation.
-                    Log.i(TAG, "User canceled autocomplete");
+                    Log.i(TAG, "User canceled autocomplete1");
+                }
+            });
+    private final ActivityResultLauncher<Intent> startAutocomplete2 = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            result -> {
+                if (result.getResultCode() == Activity.RESULT_OK) {
+                    Intent intent = result.getData();
+                    if (intent != null) {
+                        Place place2 = Autocomplete.getPlaceFromIntent(intent);
+
+                        // Write a method to read the address components from the Place
+                        // and populate the form with the address components
+                        Log.d(TAG, "Place: " + place2.getAddressComponents());
+                        fillInAddress(place2,false);
+                    }
+                } else if (result.getResultCode() == Activity.RESULT_CANCELED) {
+                    // The user canceled the operation.
+                    Log.i(TAG, "User canceled autocomplete2");
                 }
             });
     // [END maps_solutions_android_autocomplete_define]
@@ -110,7 +135,8 @@ public class LocationActivity extends AppCompatActivity implements OnMapReadyCal
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent intent) {
         super.onActivityResult(requestCode, resultCode, intent);
-        binding.autocompleteAddress1.setOnClickListener(startAutocompleteIntentListener);
+        binding.autocompleteAddress1.setOnClickListener(startAutocompleteIntentListener1);
+        binding.autocompleteAddressv2.setOnClickListener(startAutocompleteIntentListener2);
     }
 
     @Override
@@ -136,7 +162,7 @@ public class LocationActivity extends AppCompatActivity implements OnMapReadyCal
         placesClient = Places.createClient(this);
 
         // Attach an Autocomplete intent to the Address 1 EditText field
-        binding.autocompleteAddress1.setOnClickListener(startAutocompleteIntentListener);
+        binding.autocompleteAddress1.setOnClickListener(startAutocompleteIntentListener1);
 
         // Update checkProximity when user checks the checkbox
         CheckBox checkProximityBox = findViewById(R.id.checkbox_proximity);
@@ -155,7 +181,7 @@ public class LocationActivity extends AppCompatActivity implements OnMapReadyCal
     }
 
     // [START maps_solutions_android_autocomplete_intent]
-    private void startAutocompleteIntent() {
+    private void startAutocompleteIntent1() {
 
         // Set the fields to specify which types of place data to
         // return after the user has made a selection.
@@ -164,12 +190,28 @@ public class LocationActivity extends AppCompatActivity implements OnMapReadyCal
 
         // Build the autocomplete intent with field, country, and type filters applied
         Intent intent = new Autocomplete.IntentBuilder(AutocompleteActivityMode.OVERLAY, fields)
-                .setCountry("US")
+                .setCountry("PK")
                 .setTypesFilter(new ArrayList<String>() {{
                     add(TypeFilter.ADDRESS.toString().toLowerCase());
                 }})
                 .build(this);
-        startAutocomplete.launch(intent);
+        startAutocomplete1.launch(intent);
+    }
+    private void startAutocompleteIntent2() {
+
+        // Set the fields to specify which types of place data to
+        // return after the user has made a selection.
+        List<Place.Field> fields = Arrays.asList(Place.Field.ADDRESS_COMPONENTS,
+                Place.Field.LAT_LNG, Place.Field.VIEWPORT);
+
+        // Build the autocomplete intent with field, country, and type filters applied
+        Intent intent = new Autocomplete.IntentBuilder(AutocompleteActivityMode.OVERLAY, fields)
+                .setCountry("PK")
+                .setTypesFilter(new ArrayList<String>() {{
+                    add(TypeFilter.ADDRESS.toString().toLowerCase());
+                }})
+                .build(this);
+        startAutocomplete2.launch(intent);
     }
     // [END maps_solutions_android_autocomplete_intent]
 
@@ -189,15 +231,18 @@ public class LocationActivity extends AppCompatActivity implements OnMapReadyCal
         } catch (Resources.NotFoundException e) {
             Log.e(TAG, "Can't find style. Error: ", e);
         }
-        map.moveCamera(CameraUpdateFactory.newLatLngZoom(coordinates, 15f));
-        marker = map.addMarker(new MarkerOptions().position(coordinates));
+        map.moveCamera(CameraUpdateFactory.newLatLngZoom(coordinates1, 15f));
+        marker = map.addMarker(new MarkerOptions().position(coordinates1));
     }
     // [END maps_solutions_android_autocomplete_map_ready]
 
-    private void fillInAddress(Place place) {
-        AddressComponents components = place.getAddressComponents();
+
+//here
+private void fillInAddress(Place place , boolean Boolean) {
+    AddressComponents components = place.getAddressComponents();
+    if (Boolean) {
         StringBuilder address1 = new StringBuilder();
-        StringBuilder postcode = new StringBuilder();
+        LatLng loc1 = place.getLatLng();
 
         // Get each component of the address from the place details,
         // and then fill-in the corresponding field on the form.
@@ -217,47 +262,50 @@ public class LocationActivity extends AppCompatActivity implements OnMapReadyCal
                         break;
                     }
 
-                    case "postal_code": {
-                        postcode.insert(0, component.getName());
-                        break;
-                    }
-
-                    case "postal_code_suffix": {
-                        postcode.append("-").append(component.getName());
-                        break;
-                    }
-
-                    case "locality":
-                        binding.autocompleteCity.setText(component.getName());
-                        break;
-
-                    case "administrative_area_level_1": {
-                        binding.autocompleteState.setText(component.getShortName());
-                        break;
-                    }
-
-                    case "country":
-                        binding.autocompleteCountry.setText(component.getName());
-                        break;
                 }
             }
         }
 
         binding.autocompleteAddress1.setText(address1.toString());
-        binding.autocompletePostal.setText(postcode.toString());
+    } else {
+        StringBuilder address2 = new StringBuilder();
+        LatLng loc2 = place.getLatLng();
+        // Get each component of the address from the place details,
+        // and then fill-in the corresponding field on the form.
+        // Possible AddressComponent types are documented at https://goo.gle/32SJPM1
+        if (components != null) {
+            for (AddressComponent component : components.asList()) {
+                String type = component.getTypes().get(0);
+                switch (type) {
+                    case "street_number": {
+                        address2.insert(0, component.getName());
+                        break;
+                    }
 
-        // After filling the form with address components from the Autocomplete
+                    case "route": {
+                        address2.append(" ");
+                        address2.append(component.getShortName());
+                        break;
+                    }
+
+                }
+            }
+        }
+
+        binding.autocompleteAddressv2.setText(address2.toString());
+    }
+    // After filling the form with pick up from the Autocomplete
         // prediction, set cursor focus on the second address line to encourage
-        // entry of sub-premise information such as apartment, unit, or floor number.
-        binding.autocompleteAddress2.requestFocus();
+        // entry of drop off
+        binding.autocompleteAddressv2.requestFocus();
 
         // Add a map for visual confirmation of the address
-        showMap(place);
+        showMap(place,loc1 , loc2);
     }
 
     // [START maps_solutions_android_autocomplete_map_add]
-    private void showMap(Place place) {
-        coordinates = place.getLatLng();
+    private void showMap(Place place , LatLng loc1 , LatLng loc2) {
+        coordinates1 = place.getLatLng();
 
         // It isn't possible to set a fragment's id programmatically so we set a tag instead and
         // search for it using that.
@@ -280,7 +328,13 @@ public class LocationActivity extends AppCompatActivity implements OnMapReadyCal
                     .commit();
             mapFragment.getMapAsync(this);
         } else {
-            updateMap(coordinates);
+            if (loc1 != null & loc2 != null){
+                double distance = SphericalUtil.computeDistanceBetween(loc1,loc2);
+                String distance_str = Double.toString(distance);
+                updateMap(loc2);
+                updateMap(loc1);
+
+            }
         }
     }
     // [END maps_solutions_android_autocomplete_map_add]
@@ -295,6 +349,7 @@ public class LocationActivity extends AppCompatActivity implements OnMapReadyCal
 
     private void saveForm() {
         Log.d(TAG, "checkProximity = " + checkProximity);
+
         if (checkProximity) {
             checkLocationPermissions();
         } else {
@@ -304,15 +359,17 @@ public class LocationActivity extends AppCompatActivity implements OnMapReadyCal
                             Toast.LENGTH_SHORT)
                     .show();
         }
+
+        Intent intent = new Intent(LocationActivity.this , ConfirmationActivity.class);
+
+
+
+
     }
 
     private void clearForm() {
         binding.autocompleteAddress1.setText("");
-        binding.autocompleteAddress2.getText().clear();
-        binding.autocompleteCity.getText().clear();
-        binding.autocompleteState.getText().clear();
-        binding.autocompletePostal.getText().clear();
-        binding.autocompleteCountry.getText().clear();
+        binding.autocompleteAddressv2.setText("");
         if (mapPanel != null) {
             mapPanel.setVisibility(View.GONE);
         }
@@ -354,7 +411,7 @@ public class LocationActivity extends AppCompatActivity implements OnMapReadyCal
         // TODO: Detect and handle if user has entered or modified the address manually and update
         // the coordinates variable to the Lat/Lng of the manually entered address. May use
         // Geocoding API to convert the manually entered address to a Lat/Lng.
-        LatLng enteredLocation = coordinates;
+        LatLng enteredLocation = coordinates1;
         map.setMyLocationEnabled(true);
 
         // [START maps_solutions_android_location_get]

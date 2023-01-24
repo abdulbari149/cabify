@@ -1,2 +1,4 @@
-package com.example.cabify;public class ConfirmationActivity {
+package com.example.cabify;
+
+public class ConfirmationActivity {
 }

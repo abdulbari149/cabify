@@ -49,6 +49,8 @@
     <string name="API_KEY">AIzaSyCO4ubh_IBZn-XyaDMYimbaQaN6v1MVNio</string>
     <string name="Karachi">Karachi</string>
     <string name="map">location map</string>
+    <string name="menu_item_rides">Rides</string>
+    <string name="menu_item_logout">Logout</string>
 
     <string name="autocomplete_address1_hint" translatable="false">Enter the address</string>
 

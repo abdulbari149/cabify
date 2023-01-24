@@ -10,7 +10,7 @@ import android.widget.ListView;
 
 public class VehicleActivity extends AppCompatActivity {
     String captainlist [] = {"Captain1","Captain2","Captain3","Captain4","Captain5"};
-    int image [] = {R.drawable.person};
+    int image [] = {R.drawable.ic_baseline_person_24};
     ListView listView;
 
 

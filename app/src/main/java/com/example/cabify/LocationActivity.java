@@ -73,7 +73,7 @@ public class LocationActivity extends AppCompatActivity implements OnMapReadyCal
     private LatLng coordinates1;
     public LatLng loc1;
     public LatLng loc2;
-    public String distance_str;
+    public double distance;
     private boolean checkProximity = false;
     private SupportMapFragment mapFragment;
     private GoogleMap map;
@@ -242,7 +242,7 @@ private void fillInAddress(Place place , boolean Boolean) {
     AddressComponents components = place.getAddressComponents();
     if (Boolean) {
         StringBuilder address1 = new StringBuilder();
-        LatLng loc1 = place.getLatLng();
+        loc1 = place.getLatLng();
 
         // Get each component of the address from the place details,
         // and then fill-in the corresponding field on the form.
@@ -269,7 +269,7 @@ private void fillInAddress(Place place , boolean Boolean) {
         binding.autocompleteAddress1.setText(address1.toString());
     } else {
         StringBuilder address2 = new StringBuilder();
-        LatLng loc2 = place.getLatLng();
+        loc2 = place.getLatLng();
         // Get each component of the address from the place details,
         // and then fill-in the corresponding field on the form.
         // Possible AddressComponent types are documented at https://goo.gle/32SJPM1
@@ -329,8 +329,8 @@ private void fillInAddress(Place place , boolean Boolean) {
             mapFragment.getMapAsync(this);
         } else {
             if (loc1 != null & loc2 != null){
-                double distance = SphericalUtil.computeDistanceBetween(loc1,loc2);
-                String distance_str = Double.toString(distance);
+                distance = SphericalUtil.computeDistanceBetween(loc1,loc2);
+
                 updateMap(loc2);
                 updateMap(loc1);
 
@@ -350,19 +350,13 @@ private void fillInAddress(Place place , boolean Boolean) {
     private void saveForm() {
         Log.d(TAG, "checkProximity = " + checkProximity);
 
-        if (checkProximity) {
-            checkLocationPermissions();
-        } else {
-            Toast.makeText(
-                            this,
-                            R.string.autocomplete_skipped_message,
-                            Toast.LENGTH_SHORT)
-                    .show();
-        }
-
         Intent intent = new Intent(LocationActivity.this , ConfirmationActivity.class);
-
-
+        Bundle args = new Bundle();
+        args.putParcelable("loc1",loc1);
+        args.putParcelable("loc2",loc2);
+        args.putDouble("distance",distance);
+        intent.putExtra("args",args);
+        startActivity(intent);
 
 
     }

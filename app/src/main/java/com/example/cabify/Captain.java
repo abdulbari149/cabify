@@ -17,6 +17,5 @@ public class Captain {
         this.pick = pick;
         this.drop = drop;
 
-
     }
 }

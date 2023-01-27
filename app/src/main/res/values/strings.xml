@@ -111,5 +111,10 @@
     <string name="tag_for_pick_up">Tag for pick-up</string>
     <string name="tage_for_distance">Tage for Distance</string>
     <string name="tag_for_price">Tag for Price</string>
+    <string name="available">Available</string>
+    <string name="name">Name</string>
+    <string name="driver_image">driver image</string>
+    <string name="driver_subtitle">Choose a Driver</string>
+    <string name="driver_default_title">Car</string>
 
 </resources>

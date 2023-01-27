@@ -21,7 +21,7 @@ public class OptionsActivity extends AppCompatActivity  {
     private void startVehicleActivityOnClick(int id, String vehicleType) {
         findViewById(id).setOnClickListener(
                 v -> {
-                    Intent vehicleIntent = new Intent(OptionsActivity.this, VehicleActivity.class);
+                    Intent vehicleIntent = new Intent(OptionsActivity.this, DriversActivity.class);
                     vehicleIntent.putExtra("vehicle_type", vehicleType);
                     startActivity(vehicleIntent);
                 }

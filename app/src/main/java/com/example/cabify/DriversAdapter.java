@@ -1,56 +1,81 @@
-
 package com.example.cabify;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.List;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 
-public class DriversAdapter extends BaseAdapter {
+import com.example.cabify.model.Driver;
 
+import java.util.ArrayList;
+
+public class DriversAdapter extends RecyclerView.Adapter<DriversAdapter.DriversViewHolder> {
     Context context;
-    List<Driver> driversList;
-    LayoutInflater inflater;
-    int imageCaptain = R.drawable.ic_baseline_person_24;
+    ArrayList<Driver> drivers;
+    private final OnItemClickListener listener;
 
-    public DriversAdapter(Context ctx, List<Driver> driversList){
-        this.context = ctx;
-        this.driversList = driversList;
-        inflater = LayoutInflater.from(ctx);
+
+    public interface OnItemClickListener {
+        void onItemClick(Driver item);
+    }
+
+    public DriversAdapter(Context context, ArrayList<Driver> drivers, OnItemClickListener listener) {
+        this.context = context;
+        this.drivers = drivers;
+        this.listener = listener;
     }
 
     @Override
-    public int getCount() {
-        return driversList.size();
+    public void onBindViewHolder(@NonNull DriversViewHolder holder, int position) {
+        Driver driver = this.drivers.get(position);
+        holder.bind(driver, listener);
     }
 
-
+    @NonNull
     @Override
-    public Driver getItem(int position) {
-        return driversList.get(position);
+    public DriversAdapter.DriversViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View itemView = LayoutInflater.from(this.context).inflate(R.layout.activity_driver_item, parent, false);
+        return new DriversViewHolder(itemView);
     }
 
     @Override
-    public long getItemId(int position) {
-        return 0;
+    public int getItemCount() {
+        return this.drivers.size();
     }
 
-    @SuppressLint({"SetTextI18n", "ViewHolder"})
-    @Override
-    public View getView(int position, View view, ViewGroup parent) {
-//        View listItemView = inflater.inflate(R.layout.activity_custom_list_view,null);
-//        ((TextView) listItemView.findViewById(R.id.text)).setText(driversList.get(position).getName());
-//        ((ImageView) listItemView.findViewById(R.id.image)).setImageResource(imageCaptain);
-//        ((TextView) listItemView.findViewById(R.id.status)).setText(
-//                driversList.get(position).isAvailable() ? "Available" : "Not Available"
-//        );
-//        return listItemView;
-        return view;
+    public class DriversViewHolder extends RecyclerView.ViewHolder {
+        ImageView imageView;
+        TextView nameView;
+        TextView statusView;
+
+        public DriversViewHolder(@NonNull View itemView){
+            super(itemView);
+            imageView = (ImageView) itemView.findViewById(R.id.driver_image);
+            nameView = (TextView) itemView.findViewById(R.id.driver_name);
+            statusView = (TextView) itemView.findViewById(R.id.driver_status);
+        }
+
+        public void bind(Driver model,  final OnItemClickListener listener) {
+            nameView.setText(model.getName());
+            statusView.setText(model.isAvailable() ? "Available" : "Not Available");
+            imageView.setImageResource(R.drawable.ic_baseline_person_24);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override public void onClick(View v) {
+                    listener.onItemClick(model);
+                }
+            });
+            //        try {
+//            InputStream in = model.getImage().openConnection().getInputStream();
+//            imageView.setImageBitmap(BitmapFactory.decodeStream(in));
+//        } catch (IOException e) {
+            //        }
+        }
+
     }
 }

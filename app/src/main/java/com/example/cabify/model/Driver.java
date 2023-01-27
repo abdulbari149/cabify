@@ -1,28 +1,29 @@
-package com.example.cabify;
+package com.example.cabify.model;
+
+import android.net.Uri;
 
 import androidx.annotation.NonNull;
 
-import java.util.UUID;
+import java.net.URL;
 
 
 public class Driver {
-    private UUID id;
 
-    private String name;
-
-    private String image;
-
-    private boolean available;
-
-    private VehicleType vehicleType;
-
-    public UUID getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(String id) {
         this.id = id;
     }
+
+    private String id;
+
+    private String name;
+
+    private URL image;
+
+    private boolean available;
 
     public String getName() {
         return name;
@@ -32,11 +33,11 @@ public class Driver {
         this.name = name;
     }
 
-    public String getImage() {
+    public URL getImage() {
         return image;
     }
 
-    public void setImage(String image) {
+    public void setImage(URL image) {
         this.image = image;
     }
 
@@ -48,19 +49,11 @@ public class Driver {
         this.available = available;
     }
 
-    public VehicleType getVehicleType() {
-        return vehicleType;
-    }
-
-    public void setVehicleType(VehicleType vehicleType) {
-        this.vehicleType = vehicleType;
-    }
-
-    Driver(
-            UUID id,
+    public Driver(
+            String id,
             String name,
-            Boolean available,
-            String image
+            URL image,
+            Boolean available
     ) {
         this.id = id;
         this.name = name;
@@ -72,11 +65,10 @@ public class Driver {
     @Override
     public String toString() {
         return "Driver{" +
-                "id=" + id +
+                ", id = '" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", image='" + image + '\'' +
                 ", available=" + available +
-                ", vehicleType=" + vehicleType +
                 '}';
     }
 }

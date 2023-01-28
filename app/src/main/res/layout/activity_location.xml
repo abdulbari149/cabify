@@ -1,0 +1,77 @@
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/_2sdp"
+    tools:context=".LocationActivity">
+
+    <LinearLayout
+        android:id="@+id/autocomplete_scroll_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enter pick up location here"/>
+
+        <com.abdulbari149.driverx.model.AutocompleteEditText
+            android:id="@+id/autocomplete_address1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="select pick up"
+            android:hint="@string/select_pickup"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:minHeight="48dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enter drop off location here"/>
+        <com.abdulbari149.driverx.model.AutocompleteEditText_v2
+            android:id="@+id/autocomplete_addressv2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="select drop off"
+            android:hint="@string/select_drop_off"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:minHeight="48dp"
+            />
+
+        <!-- Proximity check option  -->
+        <CheckBox
+            android:id="@+id/checkbox_proximity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:text="@string/autocomplete_proximity_check" />
+
+        <!-- The map for visual confirmation of the selected address -->
+        <!-- Stub to only load the map after Autocomplete prediction selection -->
+        <ViewStub
+            android:id="@+id/stub_map"
+            android:inflatedId="@+id/panel_map"
+            android:layout="@layout/autocomplete_address_map"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_gravity="bottom" />
+
+        <Button
+            android:id="@+id/autocomplete_save_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/autocomplete_save_button"/>
+
+        <!-- Reset button  -->
+        <Button
+            android:id="@+id/autocomplete_reset_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:text="@string/autocomplete_reset_button"/>
+    </LinearLayout>
+</ScrollView>

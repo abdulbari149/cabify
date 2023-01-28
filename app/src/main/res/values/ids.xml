@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="optionsTitle" type="id" />
+    <item name="carImageButton" type="id" />
+    <item name="carText" type="id" />
+    <item name="carPreText" type="id" />
+    <item name="autoBtn" type="id" />
+    <item name="autoText" type="id" />
+    <item name="bikeBtn" type="id" />
+    <item name="bikeText" type="id" />
+    <item name="imageButton8" type="id" />
+    <item name="carPreBtn" type="id" />
+</resources>

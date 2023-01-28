@@ -1,0 +1,120 @@
+<resources>
+    <string name="app_name">Cabify</string>
+    <string name="appdes">Let\'s go with Cabify!</string>
+    <string name="mainlogin">LOGIN</string>
+    <string name="mainsignup">SIGNUP</string>
+    <string name="login_title">HELLO CUSTOMER!</string>'
+    <string name="credentials">Enter your credentials below</string>
+    <string name="logem">Enter your email</string>
+    <string name="logpwd">Enter your password</string>
+    <string name="signem">Enter your email</string>
+    <string name="signpwd">Enter your password</string>
+    <string name="check">Keep me logged in</string>
+    <string name="facebook_app_id">688132566370750</string>
+    <string name="fb_login_protocol_scheme">fb1234</string>
+    <string name="facebook_client_token">adb719f1f7e7d8364fc1b8879cb741c6</string>
+    <string name="signdes">SIGN UP AND BOOK YOUR FIRST RIDE WITH US</string>
+    <string name="signuser">Username</string>
+    <string name="cnfpwd">Confirm password</string>
+    <string name="title_activity_mapscreen">mapscreen</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="app">Navigation Drawer</string>
+    <string name="open">Open Nav</string>
+    <string name="close">Close Nav</string>
+    <string name="google_btn">Google button</string>
+    <string name="facebook_btn">Google button</string>
+    <string name="backbtn">back button</string>
+    <string name="continue_with_google">Continue With Google</string>
+    <string name="options_title">CABIFY</string>
+    <string name="options_sub_title">PLEASE CHOOSE AN OPTION.</string>
+    <string name="car">CAR</string>
+    <string name="carPre">CAR+</string>
+    <string name="auto">AUTO</string>
+    <string name="bike">BIKE</string>
+    <string name="car_btn_speakable_text">select car</string>
+    <string name="car_pre_btn_speakable_text">select car premium</string>
+    <string name="auto_btn_speakable_text">select auto</string>
+    <string name="bike_btn_speakable_text">select bike</string>
+    <string name="menu_btn_speakable_text">Menu Button</string>
+    <string name="profile_pic_speakable_text">this is profile picture</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="API_KEY">AIzaSyCO4ubh_IBZn-XyaDMYimbaQaN6v1MVNio</string>
+    <string name="Karachi">Karachi</string>
+    <string name="map">location map</string>
+    <string name="menu_item_rides">Rides</string>
+    <string name="menu_item_logout">Logout</string>
+
+    <string name="autocomplete_address1_hint" translatable="false">Enter the address</string>
+
+    <!-- Label for the autocomplete form's heading. -->
+    <string name="autocomplete_address_heading_label" translatable="false">Delivery Address</string>
+
+    <!-- Label for the address form's first address line field. -->
+    <string name="autocomplete_address1_label" translatable="false">Address Line 1</string>
+
+    <!-- Label for the address form's second address line field. -->
+    <string name="autocomplete_address2_label" translatable="false">Apartment, unit, suite, or floor #</string>
+
+    <!-- Label for the address form's city field. -->
+    <string name="autocomplete_city_label" translatable="false">City</string>
+
+    <!-- Label for the address form's state field. -->
+    <string name="autocomplete_state_label" translatable="false">State/Province</string>
+
+    <!-- Label for the address form's postal code field. -->
+    <string name="autocomplete_postal_label" translatable="false">Postal code</string>
+
+    <!-- Label for the address form's country field. -->
+    <string name="autocomplete_country_label" translatable="false">Country/Region</string>
+
+    <!-- Label for the address form's proximity check setting. -->
+    <string name="autocomplete_proximity_check" translatable="false">Check device proximity</string>
+
+    <!-- Label for the address form's confirmation map. -->
+    <string name="autocomplete_map_label" translatable="false">Map view of the selected address</string>
+
+    <!-- Text for the address form submit button. -->
+    <string name="autocomplete_save_button" translatable="false">Submit address</string>
+
+    <!-- Text for the address form reset button. -->
+    <string name="autocomplete_reset_button" translatable="false">Clear form</string>
+
+    <!-- Text for the toast message for permissions denied. -->
+    <string name="autocomplete_denied_message" translatable="false">User denied location permission. Cannot check proximity to entered address.</string>
+
+    <!-- Text for the toast message for proximity match in progress. -->
+    <string name="autocomplete_progress_message" translatable="false">Checking proximity</string>
+
+    <!-- Text for the toast message for a successful proximity match. -->
+    <string name="autocomplete_match_message" translatable="false">Device location matches entered address</string>
+
+    <!-- Text for the toast message for a failed proximity match. -->
+    <string name="autocomplete_nomatch_message" translatable="false">Device location does not match entered address</string>
+
+    <!-- Text for the toast message for a skilled proximity match. -->
+    <string name="autocomplete_skipped_message" translatable="false">Address accepted with</string>
+    <string name="select_pickup">select pickup</string>
+    <string name="select_drop_off">select drop off</string>
+    <string name="dropoff_location">Dropoff Location :</string>
+    <string name="pickup_location">Pickup Location :</string>
+    <string name="estimated_distance">Estimated Distance :</string>
+    <string name="estimated_price">Estimated Price :</string>
+    <string name="tag_for_drop_off">Tag for Drop-off</string>
+    <string name="tag_for_pick_up">Tag for pick-up</string>
+    <string name="tage_for_distance">Tage for Distance</string>
+    <string name="tag_for_price">Tag for Price</string>
+    <string name="available">Available</string>
+    <string name="name">Name</string>
+    <string name="driver_image">driver image</string>
+    <string name="driver_subtitle">Choose a Driver</string>
+    <string name="driver_default_title">Car</string>
+
+</resources>

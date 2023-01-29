@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "400832931316",
+    "project_id": "cabify-d8e3d",
+    "storage_bucket": "cabify-d8e3d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:400832931316:android:4ae52941c0905d203485a1",
+        "android_client_info": {
+          "package_name": "com.abdulbari149.driverx"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "400832931316-m3iojo8el1nkdbhuqv16862srkocg3o0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.abdulbari149.driverx",
+            "certificate_hash": "4cc5b627e2a4ca59fc2710ad78b4587f86a69366"
+          }
+        },
+        {
+          "client_id": "400832931316-p1g3qnk2db9u32v50nfvqtqa5tao7qat.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAbCiHfEhk-zVpE8Di1V5YPzJLdCUc0kEk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "400832931316-p1g3qnk2db9u32v50nfvqtqa5tao7qat.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

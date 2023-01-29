@@ -1,75 +1,102 @@
 package com.abdulbari149.driverx;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ListView;
+import android.widget.ProgressBar;
+import android.widget.Toast;
 
-//import com.abdulbari149.driverx.databinding.ActivityMainBinding;
-//import com.abdulbari149.driverx.databinding.ActivityRidesBinding;
-
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.List;
+
 
 public class RidesActivity extends AppCompatActivity {
+    ArrayList<BookingDetails> bookingDetailsArrayList;
+    FirebaseFirestore db ;
+    CollectionReference bookingsRef;
+    RidesAdapter adapter;
+    ProgressBar loading;
 
+    private final OnSuccessListener<QuerySnapshot> getDriversSuccess = new OnSuccessListener<QuerySnapshot>() {
+        @SuppressLint("NotifyDataSetChanged")
+        @Override
+        public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+            if (!queryDocumentSnapshots.isEmpty()) {
+                try {
+                    loading.setVisibility(View.GONE);
+                    List<DocumentSnapshot> documents = queryDocumentSnapshots.getDocuments();
+                    for (DocumentSnapshot doc : documents) {
+                        BookingDetails bookingDetails = doc.toObject(BookingDetails.class, DocumentSnapshot.ServerTimestampBehavior.ESTIMATE);
+                        bookingDetailsArrayList.add(bookingDetails);
+                    }
+                    adapter.notifyDataSetChanged();
+                } catch (IllegalStateException e) {
+                    Toast.makeText(RidesActivity.this, "error occurred", Toast.LENGTH_SHORT).show();
+                }
 
-//    ActivityRidesBinding binding;
+            } else {
+                Toast.makeText(RidesActivity.this, "No data found in Database", Toast.LENGTH_SHORT).show();
+            }
+        }
+    };
+
+    private final OnFailureListener getDriversFailure =  new OnFailureListener() {
+        @Override
+        public void onFailure(@NonNull Exception e) {
+            Toast.makeText(RidesActivity.this, "Fail to get the data.", Toast.LENGTH_SHORT).show();
+        }
+    };
+
+    private void getBookings() {
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        bookingsRef
+                .whereEqualTo("passengerId", user.getUid())
+                .get()
+                .addOnSuccessListener(RidesActivity.this, getDriversSuccess)
+                .addOnFailureListener(RidesActivity.this, getDriversFailure);
+    };
+
+    private final AdapterView.OnItemClickListener driverItemClickListener =  new AdapterView.OnItemClickListener() {
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            startActivity(new Intent(RidesActivity.this, LocationActivity.class));
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        binding = ActivityRidesBinding.inflate(getLayoutInflater());
-//        setContentView(binding.getRoot());
+        setContentView(R.layout.activity_rides_list);
 
+        findViewById(R.id.rides_list_back_btn).setOnClickListener(v -> onBackPressed());
 
-        int[] imageid = {R.drawable.cap1, R.drawable.cap1, R.drawable.cap1, R.drawable.cap1, R.drawable.cap1,
-                R.drawable.cap1,  R.drawable.cap1,  R.drawable.cap1};
-        String[] name = {"Usaid", "Rafay", "Maaz", "Wali", "Mustafa", "Faizan","Bari","Ammar"};
-        String[] pickup = {"Gulshan", "Ancholi", "Nazimabad ",
-                "Saddar", "Luckyone", "Nueplex","Clifton","DHA"};
-        String[] dropoff = {"Saddar", "Luckyone", "Nueplex", "Ancholi", "Nazimabad ",
-                "abc","Nazimabad ","5star"};
-        String[] Durtime = {"1hr", "10min", "7min", "67min", "2hr",
-                "6hr","1.5hr","30min"};
-        String [] duration = {"Duration:"};
-        String[] cosRS = {"500rs", "400rs", "300rs", "200rs", "144rs", "8888rs","2000rs","550rs"};
-        String [] cost = {"Cost:"};
-        String [] pick = {"(Pick Up)"};
-        String[] drop = {"(Drop Off)"};
+        RecyclerView listView = (RecyclerView) findViewById(R.id.rides_list);
+        loading = (ProgressBar) findViewById(R.id.rides_progress_bar);
 
+        db = FirebaseFirestore.getInstance();
+        bookingsRef = db.collection("bookings");
+        bookingDetailsArrayList = new ArrayList<>();
+        listView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+        listView.setHasFixedSize(true);
+        adapter = new RidesAdapter(RidesActivity.this, bookingDetailsArrayList);
+        listView.setAdapter(adapter);
+        getBookings();
+    }
 
-        ArrayList<Captain> captainArrayList = new ArrayList<>();
-
-        for (int i = 0; i < imageid.length; i++) {
-
-            Captain captain = new Captain(name[i], pickup[i], dropoff[i], duration[0], cost[0],imageid[i],Durtime[i],cosRS[i],pick[0],drop[0]);
-            captainArrayList.add(captain);
-
-        }
-
-
-        RidesAdapter ridesAdapter = new RidesAdapter(RidesActivity.this, captainArrayList);
-//        binding.List.setAdapter(ridesAdapter);
-    }}
-//
-//        binding.
-//        binding.listview.setClickable(true);
-//        binding.listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//
-//                Intent i = new Intent(MainActivity.this,UserActivity.class);
-//                i.putExtra("name",name[position]);
-//                i.putExtra("phone",phoneNo[position]);
-//                i.putExtra("imageid",imageId[position]);
-//                startActivity(i);
-//
-//            }
-//        });
-//
-//    }
-//}
+}

@@ -21,9 +21,12 @@ public class Driver {
 
     private String name;
 
-    private URL image;
+    private String image;
 
     private boolean available;
+
+
+    private String vehicleType;
 
     public String getName() {
         return name;
@@ -33,11 +36,11 @@ public class Driver {
         this.name = name;
     }
 
-    public URL getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(URL image) {
+    public void setImage(String image) {
         this.image = image;
     }
 
@@ -49,16 +52,29 @@ public class Driver {
         this.available = available;
     }
 
+    public String getVehicleType() {
+        return vehicleType;
+    }
+
+    public void setVehicleType(String vehicleType) {
+        this.vehicleType = vehicleType;
+    }
+
+    public Driver() {
+
+    }
+
+
     public Driver(
-            String id,
             String name,
-            URL image,
-            Boolean available
+            String image,
+            Boolean available,
+            String vehicleType
     ) {
-        this.id = id;
         this.name = name;
         this.available = available;
         this.image = image;
+        this.vehicleType = vehicleType;
     }
 
     @NonNull

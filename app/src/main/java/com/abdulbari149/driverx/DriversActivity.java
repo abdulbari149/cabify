@@ -52,7 +52,7 @@ import java.util.Locale;
 //        });
 
 public class DriversActivity extends AppCompatActivity {
-    ArrayList<Driver> driversList;
+    List<Driver> driversList;
     FirebaseFirestore db ;
     CollectionReference driversRef;
     DriversAdapter adapter;
@@ -65,22 +65,15 @@ public class DriversActivity extends AppCompatActivity {
             if (!queryDocumentSnapshots.isEmpty()) {
                 loading.setVisibility(View.GONE);
                 List<DocumentSnapshot> documents = queryDocumentSnapshots.getDocuments();
-                for (DocumentSnapshot doc : documents) {
-                    String id = doc.getId();
-                    String name = doc.get("name", String.class);
-                    Boolean available = doc.get("available", Boolean.class);
-                    URL image = null;
-                    try {
-                        image = new URL(doc.get("image", String.class));
-                    } catch (MalformedURLException e) {
-                        return;
-                    }
-                    Driver driver = new Driver(id, name, image, available);
+                for(DocumentSnapshot documentSnapshot: documents) {
+                    Driver driver = documentSnapshot.toObject(Driver.class, DocumentSnapshot.ServerTimestampBehavior.ESTIMATE);
+                    driver.setId(documentSnapshot.getId());
                     driversList.add(driver);
                 }
                 adapter.notifyDataSetChanged();
             } else {
                 Toast.makeText(DriversActivity.this, "No data found in Database", Toast.LENGTH_SHORT).show();
+                onBackPressed();
             }
         }
     };
@@ -127,6 +120,7 @@ public class DriversActivity extends AppCompatActivity {
             @Override public void onItemClick(Driver item) {
                 Intent driverIntent = new Intent(DriversActivity.this, LocationActivity.class);
                 driverIntent.putExtra("driverId", item.getId());
+                driverIntent.putExtra("driverName", item.getName());
                 startActivity(driverIntent);
             }
         });

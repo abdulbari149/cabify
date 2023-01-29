@@ -13,11 +13,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.abdulbari149.driverx.model.Driver;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class DriversAdapter extends RecyclerView.Adapter<DriversAdapter.DriversViewHolder> {
     Context context;
-    ArrayList<Driver> drivers;
+    List<Driver> drivers;
     private final OnItemClickListener listener;
 
 
@@ -25,7 +25,7 @@ public class DriversAdapter extends RecyclerView.Adapter<DriversAdapter.DriversV
         void onItemClick(Driver item);
     }
 
-    public DriversAdapter(Context context, ArrayList<Driver> drivers, OnItemClickListener listener) {
+    public DriversAdapter(Context context, List<Driver> drivers, OnItemClickListener listener) {
         this.context = context;
         this.drivers = drivers;
         this.listener = listener;

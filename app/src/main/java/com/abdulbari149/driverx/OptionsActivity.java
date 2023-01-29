@@ -13,10 +13,11 @@ import android.widget.Toast;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class OptionsActivity extends AppCompatActivity  {
     GoogleSignInClient googleSignInClient;
-
+    FirebaseAuth mAuth;
 
     private void startVehicleActivityOnClick(int id, String vehicleType) {
         findViewById(id).setOnClickListener(
@@ -36,10 +37,12 @@ public class OptionsActivity extends AppCompatActivity  {
 
     private final OnFailureListener googleLogoutFailure = e -> Toast.makeText(OptionsActivity.this, "Failed to logout. Please try Again", Toast.LENGTH_SHORT).show();
 
-    private void googleLogout() {
-        googleSignInClient.signOut()
-                .addOnSuccessListener(googleLogoutSuccess)
-                .addOnFailureListener(googleLogoutFailure);
+    private void logout() {
+        Intent logoutIntent = new Intent(OptionsActivity.this, MainActivity.class);
+
+        mAuth.signOut();
+
+        startActivity(logoutIntent);
     };
 
     private void goToRidesScreen() {
@@ -51,7 +54,8 @@ public class OptionsActivity extends AppCompatActivity  {
         public boolean onMenuItemClick(MenuItem item) {
             switch (item.getItemId()){
                 case R.id.menu_item_logout:
-                    googleLogout();
+                    logout();
+                    return true;
                 case R.id.menu_item_rides:
                     goToRidesScreen();
                 default:
@@ -74,9 +78,10 @@ public class OptionsActivity extends AppCompatActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_options);
+        mAuth = FirebaseAuth.getInstance();
         findViewById(R.id.menu_button).setOnClickListener(this.menuBtnClickHandler);
         startVehicleActivityOnClick(R.id.carBtn, "car");
-        startVehicleActivityOnClick(R.id.carPreBtn, "carPre");
+        startVehicleActivityOnClick(R.id.carPreBtn, "car_pre");
         startVehicleActivityOnClick(R.id.autoBtn, "auto");
         startVehicleActivityOnClick(R.id.bikeBtn, "bike");
     }

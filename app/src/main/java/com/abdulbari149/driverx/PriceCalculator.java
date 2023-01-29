@@ -1,7 +1,7 @@
 package com.abdulbari149.driverx;
 
 public class PriceCalculator {
-    private double pricePerMetre;
+    private final double pricePerMetre;
 
     public PriceCalculator(double pricePerMetre) {
         this.pricePerMetre = pricePerMetre;

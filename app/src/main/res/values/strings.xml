@@ -116,5 +116,8 @@
     <string name="driver_image">driver image</string>
     <string name="driver_subtitle">Choose a Driver</string>
     <string name="driver_default_title">Car</string>
+    <string name="location_pickup_text">Enter pick up location here</string>
+    <string name="location_dropoff_text">Enter drop off location here</string>
+    <string name="main_poster_image">main_poster_image</string>
 
 </resources>
